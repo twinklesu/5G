@@ -14,7 +14,7 @@ public class VPAdapter extends FragmentPagerAdapter {
     public VPAdapter(FragmentManager fm) {
         super(fm);
         items = new ArrayList<Fragment>();
-        items.add(new SearchFragment());
+        items.add(new NoticeFragment());
         items.add(new HomeFragment());
         items.add(new MyPageFragment());
 
