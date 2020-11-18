@@ -9,6 +9,6 @@ public class PostWriteModifyActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_post_write_modify2);
+        setContentView(R.layout.activity_post_write_modify);
     }
 }
