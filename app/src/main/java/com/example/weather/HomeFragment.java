@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -20,6 +21,7 @@ import com.android.volley.toolbox.Volley;
 
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
@@ -76,10 +78,14 @@ public class HomeFragment extends Fragment {
         }
 
         final String TAG = HomeFragment.class.getSimpleName();
+//        TextView t = getView().findViewsWithText(R.id.weatherMeteorological);
 
         Date date = new Date();
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+        SimpleDateFormat time = new SimpleDateFormat("HH");
+
+        Log.d(TAG, "Time : " + time.format(date));
 
         String apiUrl = "http://apis.data.go.kr/1360000/VilageFcstInfoService/getVilageFcst";	//동네예보조회
 
@@ -89,7 +95,7 @@ public class HomeFragment extends Fragment {
         String baseDate = sdf.format(date);	//조회하고싶은 날짜
         String baseTime = "0800";	//API 제공 시간
         String dataType = "JSON";	//타입 xml, json
-        String numOfRows = "250";	//한 페이지 결과 수
+        String numOfRows = "14";	//한 페이지 결과 수
 
         RequestQueue queue = Volley.newRequestQueue(HomeFragment.this.getActivity());
 
@@ -141,6 +147,16 @@ public class HomeFragment extends Fragment {
                     @Override
                     public void onResponse(JSONObject response) {
                         Log.d(TAG, "Success : " + response.toString());
+                        try {
+                            JSONObject result = (JSONObject) response.get("result");
+                            JSONObject body = (JSONObject) result.get("body");
+                            JSONObject items = (JSONObject) body.get("items");
+                            JSONArray item = (JSONArray) items.get("item");
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }, new Response.ErrorListener() {
                     @Override
@@ -152,6 +168,8 @@ public class HomeFragment extends Fragment {
         );
 
         queue.add(jsonArrayRequest);
+
+
     }
 
     @Override
