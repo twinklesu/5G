@@ -12,7 +12,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="4"
+        android:layout_weight="3"
         android:orientation="vertical">
 
     </LinearLayout>
@@ -37,8 +37,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"
-                android:text="Email" />
+                android:layout_marginTop="20dp"
+                android:text=" Email" />
 
             <EditText
                 android:id="@+id/txtLoginId"
@@ -59,7 +59,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:text="Password" />
+                android:layout_marginTop="10dp"
+                android:text=" Password" />
 
             <EditText
                 android:id="@+id/txtLoginPw"
@@ -93,14 +94,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center|clip_vertical"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="30dp"
                     android:text="Remember me" />
 
                 <Button
                     android:id="@+id/btnForgot"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginRight="20dp"
                     android:layout_weight="1"
                     android:background="#00FFFFFF"
@@ -131,7 +133,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_weight="1.5"
         android:orientation="horizontal">
 
         <ImageButton
@@ -179,7 +181,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="0.8"
         android:orientation="horizontal">
 
         <TextView
@@ -201,5 +203,6 @@
             android:text="Sign Up"
             android:textColor="#DD0F6F"
             android:textSize="18sp" />
+
     </LinearLayout>
 </LinearLayout>
