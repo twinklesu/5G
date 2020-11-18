@@ -8,6 +8,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.sql.Time;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link HomeFragment#newInstance} factory method to
@@ -53,6 +66,23 @@ public class HomeFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        Date date = new Date();
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+
+        String apiUrl = "http://apis.data.go.kr/1360000/VilageFcstInfoService/getVilageFcst";	//동네예보조회
+
+        String serviceKey = "9KSHD5LtoJANsIrfd8%2BHozU%2FSzL7EXty4XBhHas84GDqMsPgSoMXEQkOkMKI9EcOIYX%2FXsT7PxU4lENxllCvoA%3D%3D";
+        String nx = "60";	//위도
+        String ny = "127";	//경도
+        String baseDate = sdf.format(date);	//조회하고싶은 날짜
+        String baseTime = "0800";	//API 제공 시간
+        String dataType = "json";	//타입 xml, json
+        String numOfRows = "250";	//한 페이지 결과 수
+
+
+
     }
 
     @Override
