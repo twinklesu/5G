@@ -18,6 +18,8 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
             android:text="로그인"
             android:textSize="40sp" />
     </LinearLayout>
@@ -39,6 +41,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|center_horizontal|center_vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:ems="10"
                 android:hint="ID"
                 android:inputType="textPersonName" />
@@ -54,6 +58,8 @@
                 android:id="@+id/txtLoginPw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
                 android:ems="10"
                 android:hint="Password"
                 android:inputType="textPassword" />
@@ -116,7 +122,10 @@
             android:id="@+id/btnNaver"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="5dp"
             android:layout_weight="1"
             android:text="네이버 회원가입 및 로그인" />
 
@@ -124,8 +133,10 @@
             android:id="@+id/btnFacebook"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="5dp"
             android:layout_weight="1"
             android:text="페이스북 회원가입 및 로그인" />
 
@@ -133,7 +144,10 @@
             android:id="@+id/btnGoogle"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="5dp"
             android:layout_weight="1"
             android:text="구글 회원가입 및 로그인" />
     </LinearLayout>

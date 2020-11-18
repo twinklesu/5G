@@ -17,6 +17,8 @@
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
             android:layout_weight="10"
             android:text="게시판"
             android:textSize="36sp" />
@@ -25,8 +27,8 @@
             android:id="@+id/imageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="5dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginRight="10dp"
             android:layout_weight="0.2"
             android:background="#00FFFFFF"
             tools:srcCompat="@android:drawable/ic_menu_edit" />
@@ -54,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="13dp"
             android:layout_weight="0.5"
             android:background="#00FFFFFF"
             android:scrollbarSize="10dp"
