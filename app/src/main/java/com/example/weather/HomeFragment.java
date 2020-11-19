@@ -1,8 +1,14 @@
 package com.example.weather;
 
+import android.Manifest;
 import android.app.VoiceInteractor;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -78,14 +84,24 @@ public class HomeFragment extends Fragment {
         }
 
         final String TAG = HomeFragment.class.getSimpleName();
-//        TextView t = getView().findViewsWithText(R.id.weatherMeteorological);
+        TextView t = getActivity().findViewById(R.id.weatherMeteorological);
 
         Date date = new Date();
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
         SimpleDateFormat time = new SimpleDateFormat("HH");
 
+        LocationManager lm = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            String[] PERMISSIONS = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
+            ActivityCompat.requestPermissions(getActivity(), PERMISSIONS, 100);
+        }
+        Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        double longitude = location.getLongitude();
+        double latitude = location.getLatitude();
+
         Log.d(TAG, "Time : " + time.format(date));
+        Log.d(TAG, "위치 : " + longitude + ", " + latitude);
 
         String apiUrl = "http://apis.data.go.kr/1360000/VilageFcstInfoService/getVilageFcst";	//동네예보조회
 
@@ -166,10 +182,7 @@ public class HomeFragment extends Fragment {
                     }
                 }
         );
-
         queue.add(jsonArrayRequest);
-
-
     }
 
     @Override
