@@ -44,6 +44,8 @@ import java.util.Map;
  */
 public class HomeFragment extends Fragment {
 
+    static final String TAG = HomeFragment.class.getSimpleName();
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -83,13 +85,9 @@ public class HomeFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-        final String TAG = HomeFragment.class.getSimpleName();
         TextView t = getActivity().findViewById(R.id.weatherMeteorological);
 
         Date date = new Date();
-
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-        SimpleDateFormat time = new SimpleDateFormat("HH");
 
         LocationManager lm = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
         if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -100,7 +98,6 @@ public class HomeFragment extends Fragment {
         double longitude = location.getLongitude();
         double latitude = location.getLatitude();
 
-        Log.d(TAG, "Time : " + time.format(date));
         Log.d(TAG, "위치 : " + longitude + ", " + latitude);
 
         LatXLngY temp = convertGRID_GPS(TO_GRID, latitude, longitude);
@@ -110,8 +107,8 @@ public class HomeFragment extends Fragment {
         String serviceKey = "9KSHD5LtoJANsIrfd8%2BHozU%2FSzL7EXty4XBhHas84GDqMsPgSoMXEQkOkMKI9EcOIYX%2FXsT7PxU4lENxllCvoA%3D%3D";
         String nx = Integer.toString((int) temp.x);	//위도
         String ny = Integer.toString((int) temp.y);	//경도
-        String baseDate = sdf.format(date);	//조회하고싶은 날짜
-        String baseTime = "0800";	//API 제공 시간
+        String baseDate = SetParameter.setDate(date);	//조회하고싶은 날짜
+        String baseTime = SetParameter.setTime(date);	//API 제공 시간
         String dataType = "JSON";	//타입 xml, json
         String numOfRows = "14";	//한 페이지 결과 수
 
@@ -276,8 +273,6 @@ public class HomeFragment extends Fragment {
         return rs;
     }
 
-
-
     class LatXLngY
     {
         public double lat;
@@ -286,5 +281,44 @@ public class HomeFragment extends Fragment {
         public double x;
         public double y;
 
+    }
+
+    static class SetParameter {
+
+        static String setTime(Date today) {
+            String base_time;
+            SimpleDateFormat time = new SimpleDateFormat("HH");
+
+            int nowTime = Integer.parseInt(time.format(today));
+
+            Log.d(TAG, "Time : " + time.format(today));
+
+            // Base_time : 0200, 0500, 0800, 1100, 1400, 1700, 2000, 2300
+            if (nowTime >= 2 && nowTime < 5) base_time = "0200";
+                else if (nowTime >= 5 && nowTime < 8) base_time = "0500";
+                else if (nowTime >= 8 && nowTime < 11) base_time = "0800";
+                else if (nowTime >= 11 && nowTime < 14) base_time = "1100";
+                else if (nowTime >= 14 && nowTime < 17) base_time = "1400";
+                else if (nowTime >= 17 && nowTime < 20) base_time = "1700";
+                else if (nowTime >= 20 && nowTime < 23) base_time = "2000";
+                else base_time = "2300";
+
+            return base_time;
+        }
+
+        static String setDate(Date today) {
+            String base_date;
+            SimpleDateFormat date = new SimpleDateFormat("yyyyMMdd");
+            SimpleDateFormat time = new SimpleDateFormat("HH");
+            int nowTime = Integer.parseInt(time.format(today));
+
+            Date dDate = new Date();
+            dDate = new Date(dDate.getTime()+(1000*60*60*24*-1));
+
+            if(nowTime == 23 || nowTime == 0 || nowTime == 1 || nowTime == 2) base_date = date.format(dDate);
+            else base_date = date.format(today);
+
+            return base_date;
+        }
     }
 }
