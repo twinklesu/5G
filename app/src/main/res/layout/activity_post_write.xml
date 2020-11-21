@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/background"
     tools:context=".PostWriteActivity">
 
     <LinearLayout
@@ -43,17 +44,26 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:textColorHint="#5C5555">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:background="#00FFFFFF"
                 android:backgroundTint="#00FFFFFF"
                 android:hint="제목을 입력하세요."
-                android:textColorHint="#716E6E" />
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="5dp"
+                android:textColorHint="#151414"
+                android:textSize="22sp" />
         </com.google.android.material.textfield.TextInputLayout>
+
     </LinearLayout>
 
     <LinearLayout
@@ -69,7 +79,12 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/border"
-            android:hint="내용을 입력하세요." />
+            android:hint="내용을 입력하세요."
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:textColorHint="#635F5F" />
     </LinearLayout>
 
     <LinearLayout
