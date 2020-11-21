@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -33,13 +34,14 @@
                     android:scaleType="fitXY"
                     android:src="@drawable/home_fragment_background" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/vote"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_marginBottom="5dp"
-                    android:src="@drawable/vote_button" />
+                    android:layout_width="330dp"
+                    android:layout_height="80dp"
+                    android:scaleType="fitXY"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="170dp"
+                    android:background="@drawable/vote_button" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -93,8 +95,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="15dp"
+                            android:textStyle="bold"
                             android:text="쌀쌀하고, 건조해요."
-                            android:textColor="#000000"
+                            android:textColor="#5555A3"
                             android:textSize="30dp" />
 
                     </LinearLayout>
@@ -125,6 +128,7 @@
                                 android:text="기상청 날씨"
                                 android:textAlignment="center"
                                 android:textColor="#000000"
+                                android:textStyle="bold"
                                 android:textSize="30dp" />
 
                             <LinearLayout
@@ -259,7 +263,7 @@
                     android:background="#ffffff"
                     android:text="더보기 >   "
                     android:textAlignment="textEnd"
-                    android:textColor="#000000" />
+                    android:textColor="#FF3D62" />
             </LinearLayout>
 
             <LinearLayout

@@ -2,6 +2,7 @@ package com.example.weather.fragment;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
@@ -10,10 +11,13 @@ import android.os.Bundle;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -22,6 +26,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.weather.JoinActivity1;
+import com.example.weather.LoginActivity;
+import com.example.weather.PostActivity;
+import com.example.weather.PostViewActivity;
 import com.example.weather.R;
 
 
@@ -43,6 +51,7 @@ import java.util.Date;
 public class HomeFragment extends Fragment {
 
     static final String TAG = HomeFragment.class.getSimpleName();
+    private View rootView;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -76,12 +85,21 @@ public class HomeFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        Button goToBoard = getActivity().findViewById(R.id.moreButton1);
+        goToBoard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeFragment.this.getContext(), PostViewActivity.class);
+                startActivity(intent);
+            }
+        });
 
         Date date = new Date();
 
@@ -164,7 +182,9 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        Log.d(TAG, "onCreateView: ");
+        rootView = inflater.inflate(R.layout.fragment_home, container, false);
+        return rootView;
     }
 
     public static int TO_GRID = 0;
@@ -361,6 +381,8 @@ public class HomeFragment extends Fragment {
                         Log.d(TAG, "Success : " + response.toString());
                         try {
                             TextView t = (TextView) getActivity().findViewById(R.id.weatherMeteorological);
+                            TextView t_max = (TextView) getActivity().findViewById(R.id.temp_highest);
+                            TextView t_min = (TextView) getActivity().findViewById(R.id.temp_min);
 
                             JSONObject result = (JSONObject) response.get("response");
                             JSONObject body = (JSONObject) result.get("body");
@@ -370,7 +392,7 @@ public class HomeFragment extends Fragment {
                             Log.d(TAG, "item : " + item.get(4).toString());
 
                             JSONObject t3h = (JSONObject) item.get(4);
-                            t.setText(t3h.get("fcstValue").toString());
+                            t.setText(t3h.get("fcstValue").toString() + "℃");
 
                             Log.d(TAG, "t3h : " + t3h.get("fcstValue").toString());
 
