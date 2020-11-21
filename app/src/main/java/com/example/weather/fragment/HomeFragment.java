@@ -1,7 +1,6 @@
-package com.example.weather;
+package com.example.weather.fragment;
 
 import android.Manifest;
-import android.app.VoiceInteractor;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -21,9 +20,9 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.weather.R;
 
 
 import org.json.JSONArray;
@@ -35,8 +34,6 @@ import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.

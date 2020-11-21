@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id = "@+id/tab_home"
+        android:enabled = "true"
+        android:icon = "@drawable/home"
+        app:showAsAction = "ifRoom"
+        android:title="Home" />
+
+    <item
+        android:id = "@+id/tab_lank"
+        android:enabled = "true"
+        android:icon = "@drawable/lanking"
+        app:showAsAction = "ifRoom"
+        android:title="Lank" />
+
+    <item
+        android:id = "@+id/tab_notice"
+        android:enabled = "true"
+        android:icon = "@drawable/notice"
+        app:showAsAction = "ifRoom"
+        android:title="Noti" />
+
+    <item
+        android:id = "@+id/tab_mypage"
+        android:enabled = "true"
+        android:icon = "@drawable/myweather"
+        app:showAsAction = "ifRoom"
+        android:title="MyPage" />
+</menu>

@@ -1,36 +1,61 @@
 package com.example.weather;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
 
+import android.app.Fragment;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.MenuItem;
 
-import com.google.android.material.tabs.TabLayout;
-
-import java.util.ArrayList;
+import com.example.weather.fragment.HomeFragment;
+import com.example.weather.fragment.LankFragment;
+import com.example.weather.fragment.MyPageFragment;
+import com.example.weather.fragment.NoticeFragment;
+import com.google.android.material.bottomnavigation.BottomNavigationMenu;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
+    HomeFragment HomeFragment;
+    LankFragment LankFragment;
+    NoticeFragment NoticeFragment;
+    MyPageFragment MyPageFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ViewPager vp = findViewById(R.id.viewpager);
-        VPAdapter adapter = new VPAdapter(getSupportFragmentManager());
-        vp.setAdapter(adapter);
+        HomeFragment = new HomeFragment();
+        LankFragment = new LankFragment();
+        NoticeFragment = new NoticeFragment();
+        MyPageFragment = new MyPageFragment();
 
-        //연동
-        TabLayout tab = findViewById(R.id.tab);
-        tab.setupWithViewPager(vp);
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, HomeFragment).commit();
 
-        ArrayList<Integer> images = new ArrayList<>();
-        images.add(R.drawable.home);
-        images.add(R.drawable.lanking);
-        images.add(R.drawable.notice);
-        images.add(R.drawable.myweather);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.tab_home :
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, HomeFragment).commit();
 
-        for (int i=0; i<3; i++) tab.getTabAt(i).setIcon(images.get(i));
+                        return true;
+                    case R.id.tab_lank :
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, LankFragment).commit();
+
+                        return true;
+                    case R.id.tab_notice :
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, NoticeFragment).commit();
+
+                        return true;
+                    case R.id.tab_mypage :
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, MyPageFragment).commit();
+
+                        return true;
+                }
+                return false;
+            }
+        });
     }
 }
