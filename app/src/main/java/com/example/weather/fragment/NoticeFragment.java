@@ -1,4 +1,4 @@
-package com.example.weather;
+package com.example.weather.fragment;
 
 import android.os.Bundle;
 
@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.example.weather.R;
 
 public class NoticeFragment extends ListFragment {
 
