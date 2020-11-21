@@ -119,35 +119,11 @@ public class HomeFragment extends Fragment {
         StringBuilder urlBuilder = new StringBuilder(apiUrl);
         try {
             urlBuilder.append("?" + URLEncoder.encode("ServiceKey","UTF-8") + "="+serviceKey);
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        try {
             urlBuilder.append("&" + URLEncoder.encode("nx","UTF-8") + "=" + URLEncoder.encode(nx, "UTF-8")); //경도
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        try {
             urlBuilder.append("&" + URLEncoder.encode("ny","UTF-8") + "=" + URLEncoder.encode(ny, "UTF-8")); //위도
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        try {
             urlBuilder.append("&" + URLEncoder.encode("dataType","UTF-8") + "=" + URLEncoder.encode(dataType, "UTF-8"));	/* 타입 */
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        try {
             urlBuilder.append("&" + URLEncoder.encode("base_date","UTF-8") + "=" + URLEncoder.encode(baseDate, "UTF-8")); /* 조회하고싶은 날짜*/
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        try {
             urlBuilder.append("&" + URLEncoder.encode("base_time","UTF-8") + "=" + URLEncoder.encode(baseTime, "UTF-8")); /* 조회하고싶은 시간 AM 02시부터 3시간*/
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        try {
             urlBuilder.append("&" + URLEncoder.encode("numOfRows","UTF-8") + "=" + URLEncoder.encode(numOfRows, "UTF-8"));	/* 한 페이지 결과 수 */
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
@@ -184,6 +160,8 @@ public class HomeFragment extends Fragment {
                 }
         );
         queue.add(jsonArrayRequest);
+
+        setBoardPost();
     }
 
     @Override
@@ -320,5 +298,34 @@ public class HomeFragment extends Fragment {
 
             return base_date;
         }
+    }
+
+    void setBoardPost() {
+        String url = "http://weather.eba-eqpgap7p.ap-northeast-2.elasticbeanstalk.com/post/?format=json";
+
+        RequestQueue queue = Volley.newRequestQueue(HomeFragment.this.getActivity());
+
+        JsonObjectRequest jsonArrayRequest = new JsonObjectRequest(Request.Method.GET,
+                url, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.d(TAG, "Success : " + response.toString());
+                        try {
+                            JSONArray result = (JSONArray) response.get("result");
+                            Log.d(TAG, "data : " + result.get(0));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+                Log.d(TAG, "SET POST FAIL");
+            }
+        }
+        );
+        queue.add(jsonArrayRequest);
     }
 }
