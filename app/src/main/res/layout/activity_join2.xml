@@ -28,11 +28,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:text="닉네임" />
 
         <EditText
-            android:id="@+id/txtNickName"
+            android:id="@+id/edtNickName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -52,7 +52,7 @@
             android:text="이름" />
 
         <EditText
-            android:id="@+id/txtName"
+            android:id="@+id/edtName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -113,17 +113,33 @@
             android:layout_marginTop="20dp"
             android:text="전화번호" />
 
-        <EditText
-            android:id="@+id/txtPhoneNum"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/rounded_edittext"
-            android:ems="10"
-            android:inputType="phone"
-            android:textSize="24sp" />
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edtTel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="6"
+                android:background="@drawable/rounded_edittext"
+                android:inputType="phone"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/btnCertification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:text="인증"
+                android:textSize="18sp" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textView22"
@@ -134,7 +150,7 @@
             android:text="인증번호" />
 
         <EditText
-            android:id="@+id/txtCertification"
+            android:id="@+id/edtCertification"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -146,12 +162,12 @@
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/btnJoin"
+            android:id="@+id/btnSignUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="25dp"
             android:layout_marginRight="15dp"
             android:backgroundTint="#8989d9"
             android:text="Sign Up"

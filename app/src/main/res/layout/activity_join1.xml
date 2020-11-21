@@ -28,11 +28,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             android:text="아이디" />
 
         <EditText
-            android:id="@+id/txtId"
+            android:id="@+id/edtId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -52,7 +52,7 @@
             android:text="패스워드" />
 
         <EditText
-            android:id="@+id/txtPw"
+            android:id="@+id/edtPw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -64,7 +64,7 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/txtPw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -81,7 +81,7 @@
             android:text="패스워드 *" />
 
         <EditText
-            android:id="@+id/txtPwChk"
+            android:id="@+id/edtPwChk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -93,7 +93,7 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/textView15"
+            android:id="@+id/txtPw2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -109,7 +109,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="15dp"
             android:layout_marginRight="15dp"
             android:backgroundTint="#8989d9"
             android:gravity="center"

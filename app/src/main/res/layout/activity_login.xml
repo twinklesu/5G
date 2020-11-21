@@ -40,7 +40,7 @@
                 android:text="이메일" />
 
             <EditText
-                android:id="@+id/txtLoginId"
+                android:id="@+id/edtLoginId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|center_horizontal"
@@ -62,7 +62,7 @@
                 android:text="패스워드" />
 
             <EditText
-                android:id="@+id/txtLoginPw"
+                android:id="@+id/edtLoginPw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
