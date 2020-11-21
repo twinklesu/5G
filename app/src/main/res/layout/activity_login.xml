@@ -95,14 +95,17 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center|clip_vertical"
                     android:layout_marginLeft="30dp"
-                    android:text="Remember me" />
+                    android:layout_weight="1"
+                    android:text="Remember Me"
+                    android:textColor="#673AB7"
+                    android:textSize="18sp" />
 
                 <Button
                     android:id="@+id/btnForgot"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="30dp"
                     android:layout_weight="1"
                     android:background="#00FFFFFF"
                     android:backgroundTint="#00FFFFFF"
@@ -122,6 +125,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="20dp"
                     android:text="Sign In" />
@@ -197,6 +201,7 @@
             android:id="@+id/btnSignUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_marginRight="50dp"
             android:background="#00FFFFFF"
             android:backgroundTint="#00FFFFFF"
