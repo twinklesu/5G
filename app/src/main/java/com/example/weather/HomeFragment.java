@@ -160,6 +160,8 @@ public class HomeFragment extends Fragment {
                 }
         );
         queue.add(jsonArrayRequest);
+
+        setBoardPost();
     }
 
     @Override
@@ -296,5 +298,34 @@ public class HomeFragment extends Fragment {
 
             return base_date;
         }
+    }
+
+    void setBoardPost() {
+        String url = "http://weather.eba-eqpgap7p.ap-northeast-2.elasticbeanstalk.com/post/?format=json";
+
+        RequestQueue queue = Volley.newRequestQueue(HomeFragment.this.getActivity());
+
+        JsonObjectRequest jsonArrayRequest = new JsonObjectRequest(Request.Method.GET,
+                url, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.d(TAG, "Success : " + response.toString());
+                        try {
+                            JSONArray result = (JSONArray) response.get("result");
+                            Log.d(TAG, "data : " + result.get(0));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+                Log.d(TAG, "SET POST FAIL");
+            }
+        }
+        );
+        queue.add(jsonArrayRequest);
     }
 }
