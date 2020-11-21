@@ -19,7 +19,7 @@
         android:layout_height="0dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_weight="3"
+        android:layout_weight="4"
         android:background="@drawable/rounded_box"
         android:orientation="vertical">
 
@@ -28,8 +28,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="30dp"
-            android:text="아이디" />
+            android:layout_marginTop="20dp"
+            android:text="아이디"
+            android:textColor="#686363" />
 
         <EditText
             android:id="@+id/edtId"
@@ -41,15 +42,20 @@
             android:background="@drawable/rounded_edittext"
             android:ems="10"
             android:inputType="textPersonName"
-            android:textSize="24sp" />
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#000000"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="30dp"
-            android:text="패스워드" />
+            android:layout_marginTop="15dp"
+            android:text="패스워드"
+            android:textColor="#686363" />
 
         <EditText
             android:id="@+id/edtPw"
@@ -61,7 +67,11 @@
             android:background="@drawable/rounded_edittext"
             android:ems="10"
             android:inputType="textPassword"
-            android:textSize="24sp" />
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#000000"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/txtPw"
@@ -70,6 +80,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
             android:text="숫자와 영문을 포함하여 8글자 이상이어야 합니다."
+            android:textColor="#D58F8787"
             android:textSize="12sp" />
 
         <TextView
@@ -77,8 +88,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="30dp"
-            android:text="패스워드 *" />
+            android:layout_marginTop="20dp"
+            android:text="패스워드 *"
+            android:textColor="#686363" />
 
         <EditText
             android:id="@+id/edtPwChk"
@@ -90,7 +102,11 @@
             android:background="@drawable/rounded_edittext"
             android:ems="10"
             android:inputType="textPassword"
-            android:textSize="24sp" />
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#000000"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/txtPw2"
@@ -109,7 +125,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="15dp"
             android:backgroundTint="#8989d9"
             android:gravity="center"
@@ -130,18 +146,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="80dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:backgroundTint="#00FFFFFF"
             android:gravity="center"
+            android:shadowColor="#FFFCFC"
             android:text="Sign in"
-            android:textSize="18sp" />
+            android:textColor="#040303"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/textView16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:gravity="center"
             android:text="|"
@@ -152,14 +172,15 @@
             android:id="@+id/btnForgotPw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="70dp"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:backgroundTint="#00FFFFFF"
             android:gravity="center"
             android:text="Forgot Password?"
             android:textColor="#8989d9"
-            android:textSize="18sp" />
+            android:textSize="14sp" />
 
     </LinearLayout>
 </LinearLayout>

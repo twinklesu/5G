@@ -17,9 +17,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="4"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:layout_weight="5"
         android:background="@drawable/rounded_box"
         android:orientation="vertical">
 
@@ -28,53 +28,64 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:text="닉네임" />
+            android:layout_marginTop="15dp"
+            android:text="닉네임"
+            android:textColor="#686363" />
 
         <EditText
             android:id="@+id/edtNickName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/rounded_edittext"
             android:ems="10"
             android:inputType="textPersonName"
-            android:textSize="24sp" />
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#000000"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView17"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:text="이름" />
+            android:layout_marginTop="15dp"
+            android:text="이름"
+            android:textColor="#686363" />
 
         <EditText
             android:id="@+id/edtName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/rounded_edittext"
             android:ems="10"
             android:inputType="textPersonName"
-            android:textSize="24sp" />
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#000000"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView19"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:text="성별" />
+            android:layout_marginTop="15dp"
+            android:text="성별"
+            android:textColor="#686363" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal">
 
             <RadioButton
@@ -82,8 +93,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:background="@null"
+                android:background="@android:color/darker_gray"
+                android:backgroundTint="#85938F8F"
                 android:button="@drawable/radiobutton"
                 android:gravity="center"
                 android:text="여성"
@@ -94,9 +107,11 @@
                 android:id="@+id/radiobtnMan"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
-                android:background="@null"
+                android:background="@android:color/darker_gray"
+                android:backgroundTint="#85938F8F"
                 android:button="@drawable/radiobutton"
                 android:gravity="center"
                 android:text="남성"
@@ -110,8 +125,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:text="전화번호" />
+            android:layout_marginTop="15dp"
+            android:text="전화번호"
+            android:textColor="#686363" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -123,22 +139,27 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
                 android:layout_weight="6"
                 android:background="@drawable/rounded_edittext"
                 android:inputType="phone"
-                android:textSize="24sp" />
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#000000"
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/btnCertification"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
                 android:layout_weight="1"
                 android:text="인증"
                 android:textSize="18sp" />
+
         </LinearLayout>
 
         <TextView
@@ -146,20 +167,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:text="인증번호" />
+            android:layout_marginTop="15dp"
+            android:text="인증번호"
+            android:textColor="#686363" />
 
         <EditText
             android:id="@+id/edtCertification"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/rounded_edittext"
             android:ems="10"
             android:inputType="textPostalAddress"
-            android:textSize="24sp" />
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#000000"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/btnSignUp"
@@ -167,7 +193,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="15dp"
             android:layout_marginRight="15dp"
             android:backgroundTint="#8989d9"
             android:text="Sign Up"
@@ -187,18 +213,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="80dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:backgroundTint="#00FFFFFF"
             android:gravity="center"
             android:text="Sign in"
-            android:textSize="18sp" />
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/textView16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:gravity="center"
             android:text="|"
@@ -209,14 +238,15 @@
             android:id="@+id/btnForgotPw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="70dp"
             android:layout_weight="1"
+            android:background="#00FFFFFF"
             android:backgroundTint="#00FFFFFF"
             android:gravity="center"
             android:text="Forgot Password?"
             android:textColor="#8989d9"
-            android:textSize="18sp" />
+            android:textSize="14sp" />
 
     </LinearLayout>
 </LinearLayout>
