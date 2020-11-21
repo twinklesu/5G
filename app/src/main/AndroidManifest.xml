@@ -14,11 +14,11 @@
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity android:name=".PostViewActivity"></activity>
         <activity android:name=".PostWriteModifyActivity"
-            android:theme="@style/Theme.AppCompat" />
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".PostWriteActivity"
-            android:theme="@style/Theme.AppCompat" />
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".PostActivity"
-            android:theme="@style/Theme.AppCompat" />
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".LoginActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
