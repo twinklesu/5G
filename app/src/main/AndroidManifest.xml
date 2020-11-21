@@ -11,16 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
-        android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity android:name=".PostViewActivity"></activity>
         <activity android:name=".PostWriteModifyActivity"
-            android:theme="@style/Theme.AppCompat" />
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".PostWriteActivity"
-            android:theme="@style/Theme.AppCompat" />
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".PostActivity"
-            android:theme="@style/Theme.AppCompat" />
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".LoginActivity"
-            android:theme="@style/Theme.AppCompat">
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,11 +28,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".JoinActivity2"
-            android:theme="@style/Theme.AppCompat" />
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".JoinActivity1"
-            android:theme="@style/Theme.AppCompat"/>
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat">
+            android:theme="@style/Theme.AppCompat.NoActionBar">
 
         </activity>
     </application>
