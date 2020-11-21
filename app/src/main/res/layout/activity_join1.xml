@@ -42,6 +42,8 @@
             android:background="@drawable/rounded_edittext"
             android:ems="10"
             android:inputType="textPersonName"
+            android:paddingLeft="10dp"
+            android:textColor="#000000"
             android:textSize="24sp" />
 
         <TextView
@@ -63,6 +65,8 @@
             android:background="@drawable/rounded_edittext"
             android:ems="10"
             android:inputType="textPassword"
+            android:paddingLeft="10dp"
+            android:textColor="#000000"
             android:textSize="24sp" />
 
         <TextView
@@ -94,6 +98,8 @@
             android:background="@drawable/rounded_edittext"
             android:ems="10"
             android:inputType="textPassword"
+            android:paddingLeft="10dp"
+            android:textColor="#000000"
             android:textSize="24sp" />
 
         <TextView
