@@ -33,6 +33,7 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -95,6 +96,7 @@ public class HomeFragment extends Fragment {
             ActivityCompat.requestPermissions(getActivity(), PERMISSIONS, 100);
         }
         Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        Log.d(TAG, location.toString());
         double longitude = location.getLongitude();
         double latitude = location.getLatitude();
 
@@ -102,15 +104,15 @@ public class HomeFragment extends Fragment {
 
         LatXLngY temp = convertGRID_GPS(TO_GRID, latitude, longitude);
 
-        String apiUrl = "http://apis.data.go.kr/1360000/VilageFcstInfoService/getVilageFcst";	//동네예보조회
+        String apiUrl = "http://apis.data.go.kr/1360000/VilageFcstInfoService/getVilageFcst";    //동네예보조회
 
         String serviceKey = "9KSHD5LtoJANsIrfd8%2BHozU%2FSzL7EXty4XBhHas84GDqMsPgSoMXEQkOkMKI9EcOIYX%2FXsT7PxU4lENxllCvoA%3D%3D";
-        String nx = Integer.toString((int) temp.x);	//위도
-        String ny = Integer.toString((int) temp.y);	//경도
-        String baseDate = SetParameter.setDate(date);	//조회하고싶은 날짜
-        String baseTime = SetParameter.setTime(date);	//API 제공 시간
-        String dataType = "JSON";	//타입 xml, json
-        String numOfRows = "14";	//한 페이지 결과 수
+        String nx = Integer.toString((int) temp.x);    //위도
+        String ny = Integer.toString((int) temp.y);    //경도
+        String baseDate = SetParameter.setDate(date);    //조회하고싶은 날짜
+        String baseTime = SetParameter.setTime(date);    //API 제공 시간
+        String dataType = "JSON";    //타입 xml, json
+        String numOfRows = "14";    //한 페이지 결과 수
 
         Log.d(TAG, "nx, ny : " + nx + "," + ny);
 
@@ -118,21 +120,19 @@ public class HomeFragment extends Fragment {
 
         StringBuilder urlBuilder = new StringBuilder(apiUrl);
         try {
-            urlBuilder.append("?" + URLEncoder.encode("ServiceKey","UTF-8") + "="+serviceKey);
-            urlBuilder.append("&" + URLEncoder.encode("nx","UTF-8") + "=" + URLEncoder.encode(nx, "UTF-8")); //경도
-            urlBuilder.append("&" + URLEncoder.encode("ny","UTF-8") + "=" + URLEncoder.encode(ny, "UTF-8")); //위도
-            urlBuilder.append("&" + URLEncoder.encode("dataType","UTF-8") + "=" + URLEncoder.encode(dataType, "UTF-8"));	/* 타입 */
-            urlBuilder.append("&" + URLEncoder.encode("base_date","UTF-8") + "=" + URLEncoder.encode(baseDate, "UTF-8")); /* 조회하고싶은 날짜*/
-            urlBuilder.append("&" + URLEncoder.encode("base_time","UTF-8") + "=" + URLEncoder.encode(baseTime, "UTF-8")); /* 조회하고싶은 시간 AM 02시부터 3시간*/
-            urlBuilder.append("&" + URLEncoder.encode("numOfRows","UTF-8") + "=" + URLEncoder.encode(numOfRows, "UTF-8"));	/* 한 페이지 결과 수 */
+            urlBuilder.append("?" + URLEncoder.encode("ServiceKey", "UTF-8") + "=" + serviceKey);
+            urlBuilder.append("&" + URLEncoder.encode("nx", "UTF-8") + "=" + URLEncoder.encode(nx, "UTF-8")); //경도
+            urlBuilder.append("&" + URLEncoder.encode("ny", "UTF-8") + "=" + URLEncoder.encode(ny, "UTF-8")); //위도
+            urlBuilder.append("&" + URLEncoder.encode("dataType", "UTF-8") + "=" + URLEncoder.encode(dataType, "UTF-8"));    /* 타입 */
+            urlBuilder.append("&" + URLEncoder.encode("base_date", "UTF-8") + "=" + URLEncoder.encode(baseDate, "UTF-8")); /* 조회하고싶은 날짜*/
+            urlBuilder.append("&" + URLEncoder.encode("base_time", "UTF-8") + "=" + URLEncoder.encode(baseTime, "UTF-8")); /* 조회하고싶은 시간 AM 02시부터 3시간*/
+            urlBuilder.append("&" + URLEncoder.encode("numOfRows", "UTF-8") + "=" + URLEncoder.encode(numOfRows, "UTF-8"));    /* 한 페이지 결과 수 */
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
 
         String url = urlBuilder.toString();
         Log.d(TAG, "URL : " + url);
-
-//        RequestQueue requestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
 
         JsonObjectRequest jsonArrayRequest = new JsonObjectRequest(Request.Method.GET,
                 url, null,
@@ -152,12 +152,12 @@ public class HomeFragment extends Fragment {
                         }
                     }
                 }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        error.printStackTrace();
-                        Log.d(TAG, "FAIL");
-                    }
-                }
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+                Log.d(TAG, "FAIL");
+            }
+        }
         );
         queue.add(jsonArrayRequest);
 
@@ -174,8 +174,7 @@ public class HomeFragment extends Fragment {
     public static int TO_GRID = 0;
     public static int TO_GPS = 1;
 
-    private LatXLngY convertGRID_GPS(int mode, double lat_X, double lng_Y )
-    {
+    private LatXLngY convertGRID_GPS(int mode, double lat_X, double lng_Y) {
         double RE = 6371.00877; // 지구 반경(km)
         double GRID = 5.0; // 격자 간격(km)
         double SLAT1 = 30.0; // 투영 위도1(degree)
@@ -218,8 +217,7 @@ public class HomeFragment extends Fragment {
             theta *= sn;
             rs.x = Math.floor(ra * Math.sin(theta) + XO + 0.5);
             rs.y = Math.floor(ro - ra * Math.cos(theta) + YO + 0.5);
-        }
-        else {
+        } else {
             rs.x = lat_X;
             rs.y = lng_Y;
             double xn = lat_X - XO;
@@ -234,15 +232,13 @@ public class HomeFragment extends Fragment {
             double theta = 0.0;
             if (Math.abs(xn) <= 0.0) {
                 theta = 0.0;
-            }
-            else {
+            } else {
                 if (Math.abs(yn) <= 0.0) {
                     theta = Math.PI * 0.5;
                     if (xn < 0.0) {
                         theta = -theta;
                     }
-                }
-                else theta = Math.atan2(xn, yn);
+                } else theta = Math.atan2(xn, yn);
             }
             double alon = theta / sn + olon;
             rs.lat = alat * RADDEG;
@@ -251,8 +247,7 @@ public class HomeFragment extends Fragment {
         return rs;
     }
 
-    class LatXLngY
-    {
+    class LatXLngY {
         public double lat;
         public double lng;
 
@@ -273,13 +268,13 @@ public class HomeFragment extends Fragment {
 
             // Base_time : 0200, 0500, 0800, 1100, 1400, 1700, 2000, 2300
             if (nowTime >= 2 && nowTime < 5) base_time = "0200";
-                else if (nowTime >= 5 && nowTime < 8) base_time = "0500";
-                else if (nowTime >= 8 && nowTime < 11) base_time = "0800";
-                else if (nowTime >= 11 && nowTime < 14) base_time = "1100";
-                else if (nowTime >= 14 && nowTime < 17) base_time = "1400";
-                else if (nowTime >= 17 && nowTime < 20) base_time = "1700";
-                else if (nowTime >= 20 && nowTime < 23) base_time = "2000";
-                else base_time = "2300";
+            else if (nowTime >= 5 && nowTime < 8) base_time = "0500";
+            else if (nowTime >= 8 && nowTime < 11) base_time = "0800";
+            else if (nowTime >= 11 && nowTime < 14) base_time = "1100";
+            else if (nowTime >= 14 && nowTime < 17) base_time = "1400";
+            else if (nowTime >= 17 && nowTime < 20) base_time = "1700";
+            else if (nowTime >= 20 && nowTime < 23) base_time = "2000";
+            else base_time = "2300";
 
             return base_time;
         }
@@ -291,9 +286,10 @@ public class HomeFragment extends Fragment {
             int nowTime = Integer.parseInt(time.format(today));
 
             Date dDate = new Date();
-            dDate = new Date(dDate.getTime()+(1000*60*60*24*-1));
+            dDate = new Date(dDate.getTime() + (1000 * 60 * 60 * 24 * -1));
 
-            if(nowTime == 23 || nowTime == 0 || nowTime == 1 || nowTime == 2) base_date = date.format(dDate);
+            if (nowTime == 23 || nowTime == 0 || nowTime == 1 || nowTime == 2)
+                base_date = date.format(dDate);
             else base_date = date.format(today);
 
             return base_date;
@@ -301,7 +297,7 @@ public class HomeFragment extends Fragment {
     }
 
     void setBoardPost() {
-        String url = "http://weather.eba-eqpgap7p.ap-northeast-2.elasticbeanstalk.com/post/?format=json";
+        String url = "http://weather.eba-eqpgap7p.ap-northeast-2.elasticbeanstalk.com/recent-post-5/";
 
         RequestQueue queue = Volley.newRequestQueue(HomeFragment.this.getActivity());
 
@@ -310,21 +306,50 @@ public class HomeFragment extends Fragment {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        Log.d(TAG, "Success : " + response.toString());
+                        Log.d(TAG, "Success Set Post : " + response.toString());
                         try {
-                            JSONArray result = (JSONArray) response.get("result");
-                            Log.d(TAG, "data : " + result.get(0));
+                            JSONArray results = (JSONArray) response.get("results");
+
+                            ArrayList<JSONObject> result = new ArrayList<>();
+                            ArrayList<String> setTitle = new ArrayList<>();
+                            ArrayList<String> setTime = new ArrayList<>();
+
+                            for(int i = 0; i < 5; i++) result.add((JSONObject) results.get(i));
+                            for(int i = 0; i < 5; i++) setTitle.add(result.get(i).get("post_title").toString());
+                            for (int i = 0; i < 5; i++) setTime.add(result.get(i).get("reg_dt").toString());
+
+                            ArrayList<TextView> setTitletextViewArrayList = new ArrayList<>();
+                            setTitletextViewArrayList.add((TextView) getActivity().findViewById(R.id.title1));
+                            setTitletextViewArrayList.add((TextView) getActivity().findViewById(R.id.title2));
+                            setTitletextViewArrayList.add((TextView) getActivity().findViewById(R.id.title3));
+                            setTitletextViewArrayList.add((TextView) getActivity().findViewById(R.id.title4));
+                            setTitletextViewArrayList.add((TextView) getActivity().findViewById(R.id.title5));
+                            for (int i = 0; i < setTitletextViewArrayList.size(); i++) {
+                                setTitletextViewArrayList.get(i).setText(setTitle.get(i));
+                            }
+
+                            ArrayList<TextView> setTimeTextViewArrayList = new ArrayList<>();
+                            setTimeTextViewArrayList.add((TextView) getActivity().findViewById(R.id.time1));
+                            setTimeTextViewArrayList.add((TextView) getActivity().findViewById(R.id.time2));
+                            setTimeTextViewArrayList.add((TextView) getActivity().findViewById(R.id.time3));
+                            setTimeTextViewArrayList.add((TextView) getActivity().findViewById(R.id.time4));
+                            setTimeTextViewArrayList.add((TextView) getActivity().findViewById(R.id.time5));
+                            for (int i = 0; i < setTimeTextViewArrayList.size(); i++) {
+                                setTimeTextViewArrayList.get(i).setText(setTime.get(i));
+                            }
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
                     }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-                Log.d(TAG, "SET POST FAIL");
-            }
-        }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        error.printStackTrace();
+                        Log.d(TAG, "SET POST FAIL");
+                    }
+                }
         );
         queue.add(jsonArrayRequest);
     }
