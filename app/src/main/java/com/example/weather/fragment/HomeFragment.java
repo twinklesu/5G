@@ -83,8 +83,6 @@ public class HomeFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-        TextView t = getActivity().findViewById(R.id.weatherMeteorological);
-
         Date date = new Date();
 
         LocationManager lm = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
@@ -159,6 +157,7 @@ public class HomeFragment extends Fragment {
         queue.add(jsonArrayRequest);
 
         setBoardPost();
+        setWeather(url);
     }
 
     @Override
@@ -361,11 +360,19 @@ public class HomeFragment extends Fragment {
                     public void onResponse(JSONObject response) {
                         Log.d(TAG, "Success : " + response.toString());
                         try {
-                            JSONObject result = (JSONObject) response.get("result");
+                            TextView t = (TextView) getActivity().findViewById(R.id.weatherMeteorological);
+
+                            JSONObject result = (JSONObject) response.get("response");
                             JSONObject body = (JSONObject) result.get("body");
                             JSONObject items = (JSONObject) body.get("items");
                             JSONArray item = (JSONArray) items.get("item");
 
+                            Log.d(TAG, "item : " + item.get(4).toString());
+
+                            JSONObject t3h = (JSONObject) item.get(4);
+                            t.setText(t3h.get("fcstValue").toString());
+
+                            Log.d(TAG, "t3h : " + t3h.get("fcstValue").toString());
 
                         } catch (JSONException e) {
                             e.printStackTrace();
