@@ -14,13 +14,10 @@ public class VPAdapter extends FragmentPagerAdapter {
     public VPAdapter(FragmentManager fm) {
         super(fm);
         items = new ArrayList<Fragment>();
-        items.add(new NoticeFragment());
         items.add(new HomeFragment());
+        items.add(new LankFragment());
         items.add(new MyPageFragment());
-
-//        itext.add("알림");
-//        itext.add("홈");
-//        itext.add("마이페이지");
+        items.add(new NoticeFragment());
     }
 
 //    public CharSequence getPageTitle(int position) {

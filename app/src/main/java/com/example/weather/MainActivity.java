@@ -26,9 +26,10 @@ public class MainActivity extends AppCompatActivity {
         tab.setupWithViewPager(vp);
 
         ArrayList<Integer> images = new ArrayList<>();
-        images.add(R.drawable.notification);
         images.add(R.drawable.home);
-        images.add(R.drawable.user);
+        images.add(R.drawable.lanking);
+        images.add(R.drawable.notice);
+        images.add(R.drawable.myweather);
 
         for (int i=0; i<3; i++) tab.getTabAt(i).setIcon(images.get(i));
     }
