@@ -96,7 +96,7 @@ public class HomeFragment extends Fragment {
             ActivityCompat.requestPermissions(getActivity(), PERMISSIONS, 100);
         }
         Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        Log.d(TAG, location.toString());
+//        Log.d(TAG, location.toString());
         double longitude = location.getLongitude();
         double latitude = location.getLatitude();
 
