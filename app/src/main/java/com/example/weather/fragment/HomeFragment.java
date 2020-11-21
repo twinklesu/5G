@@ -285,7 +285,7 @@ public class HomeFragment extends Fragment {
             Date dDate = new Date();
             dDate = new Date(dDate.getTime() + (1000 * 60 * 60 * 24 * -1));
 
-            if (nowTime == 23 || nowTime == 0 || nowTime == 1 || nowTime == 2)
+            if (nowTime == 0 || nowTime == 1 || nowTime == 2)
                 base_date = date.format(dDate);
             else base_date = date.format(today);
 
@@ -348,6 +348,38 @@ public class HomeFragment extends Fragment {
                     }
                 }
         );
+        queue.add(jsonArrayRequest);
+    }
+
+    void setWeather(String url) {
+        RequestQueue queue = Volley.newRequestQueue(HomeFragment.this.getActivity());
+
+        JsonObjectRequest jsonArrayRequest = new JsonObjectRequest(Request.Method.GET,
+                url, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.d(TAG, "Success : " + response.toString());
+                        try {
+                            JSONObject result = (JSONObject) response.get("result");
+                            JSONObject body = (JSONObject) result.get("body");
+                            JSONObject items = (JSONObject) body.get("items");
+                            JSONArray item = (JSONArray) items.get("item");
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                    error.printStackTrace();
+                    Log.d(TAG, "FAIL");
+                    }
+                });
+
         queue.add(jsonArrayRequest);
     }
 }
