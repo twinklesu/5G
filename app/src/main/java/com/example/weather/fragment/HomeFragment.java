@@ -30,6 +30,7 @@ import com.example.weather.JoinActivity1;
 import com.example.weather.LoginActivity;
 import com.example.weather.PostActivity;
 import com.example.weather.PostViewActivity;
+import com.example.weather.PostWriteActivity;
 import com.example.weather.R;
 
 
@@ -96,7 +97,7 @@ public class HomeFragment extends Fragment {
         goToBoard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeFragment.this.getContext(), PostViewActivity.class);
+                Intent intent = new Intent(HomeFragment.this.getContext(), PostWriteActivity.class); // 후에 연결 수정 필요
                 startActivity(intent);
             }
         });
