@@ -1,4 +1,5 @@
-package com.example.weather;
+//글쓰기
+package com.example.weather.post;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +16,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.weather.R;
 
 import org.json.JSONObject;
 

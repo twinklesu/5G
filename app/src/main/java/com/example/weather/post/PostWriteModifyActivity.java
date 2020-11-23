@@ -1,8 +1,11 @@
-package com.example.weather;
+//글 수정하기
+package com.example.weather.post;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.weather.R;
 
 public class PostWriteModifyActivity extends AppCompatActivity {
 

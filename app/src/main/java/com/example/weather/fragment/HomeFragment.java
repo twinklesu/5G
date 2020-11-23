@@ -11,13 +11,11 @@ import android.os.Bundle;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
-import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -26,11 +24,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.weather.JoinActivity1;
-import com.example.weather.LoginActivity;
-import com.example.weather.PostActivity;
-import com.example.weather.PostViewActivity;
-import com.example.weather.PostWriteActivity;
+import com.example.weather.post.PostWriteActivity;
 import com.example.weather.R;
 
 

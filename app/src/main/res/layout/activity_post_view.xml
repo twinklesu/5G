@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    tools:context=".PostViewActivity" >
+    tools:context=".post.PostViewActivity" >
 
     <ImageView
         android:id="@+id/imageView4"

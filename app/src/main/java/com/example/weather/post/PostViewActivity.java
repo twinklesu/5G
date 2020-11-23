@@ -1,8 +1,10 @@
-package com.example.weather;
+package com.example.weather.post;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.weather.R;
 
 public class PostViewActivity extends AppCompatActivity {
 
