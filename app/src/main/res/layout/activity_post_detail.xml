@@ -64,16 +64,13 @@
             android:layout_marginTop="20dp"
             tools:src="@tools:sample/avatars" />
 
-        <TextView
-            android:id="@+id/txtNickName"
+        <ImageView
+            android:id="@+id/imageView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="100dp"
             android:layout_marginTop="20dp"
-            android:hint="닉네임"
-            android:textColor="#2C2727"
-            android:textColorHint="#393131"
-            android:textSize="24sp" />
+            android:src="@drawable/more" />
 
         <TextView
             android:id="@+id/txtTime"
@@ -85,13 +82,16 @@
             android:textColor="#2C2727"
             android:textColorHint="#393131" />
 
-        <ImageView
-            android:id="@+id/imageView5"
+        <TextView
+            android:id="@+id/txtNickName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
-            android:src="@drawable/more" />
+            android:hint="닉네임"
+            android:textColor="#2C2727"
+            android:textColorHint="#393131"
+            android:textSize="24sp" />
 
     </LinearLayout>
 
@@ -185,8 +185,7 @@
                 <ListView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:cacheColorHint="#222020" >
-                </ListView>
+                    android:cacheColorHint="#222020"></ListView>
             </LinearLayout>
         </ScrollView>
 
@@ -195,16 +194,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:layout_weight="1">
 
         <EditText
             android:id="@+id/edtComment"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
             android:layout_marginRight="20dp"
+            android:layout_weight="7"
             android:background="@drawable/rounded_edittext"
             android:ems="10"
             android:hint="댓글자리"
@@ -216,6 +215,17 @@
             android:textColor="#1B1919"
             android:textColorHint="#151414"
             android:textSize="22sp" />
+
+        <ImageButton
+            android:id="@+id/btnComment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:backgroundTint="#00FFFFFF"
+            android:src="@drawable/comment_add" />
     </LinearLayout>
 
 </LinearLayout>
