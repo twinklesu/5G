@@ -185,11 +185,37 @@
                 <ListView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:cacheColorHint="#222020" />
+                    android:cacheColorHint="#222020" >
+                </ListView>
             </LinearLayout>
         </ScrollView>
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edtComment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/rounded_edittext"
+            android:ems="10"
+            android:hint="댓글자리"
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:textColor="#1B1919"
+            android:textColorHint="#151414"
+            android:textSize="22sp" />
+    </LinearLayout>
 
 </LinearLayout>
