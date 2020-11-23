@@ -1,3 +1,4 @@
+//글쓰기 댓글 보이는 곳
 package com.example.weather.post;
 
 import android.os.Bundle;
