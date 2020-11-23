@@ -206,7 +206,7 @@
             android:layout_weight="7"
             android:background="@drawable/rounded_edittext"
             android:ems="10"
-            android:hint="댓글자리"
+            android:hint="댓글을 작성하세요."
             android:inputType="textPersonName"
             android:paddingLeft="10dp"
             android:paddingTop="5dp"
