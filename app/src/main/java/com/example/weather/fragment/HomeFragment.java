@@ -299,7 +299,7 @@ public class HomeFragment extends Fragment {
             Date dDate = new Date();
             dDate = new Date(dDate.getTime() + (1000 * 60 * 60 * 24 * -1));
 
-            if (nowTime == 0 || nowTime == 1 || nowTime == 2)
+            if (nowTime == 0 || nowTime == 1)
                 base_date = date.format(dDate);
             else base_date = date.format(today);
 
