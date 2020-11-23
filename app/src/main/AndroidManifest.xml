@@ -11,18 +11,7 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".post.PostDetailActivity"
-            android:label="@string/title_activity_post_detail">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <!--
-               Set to true if your app is Standalone, that is, it does not require the handheld
-               app to run.
-        -->
+            android:label="@string/title_activity_post_detail" />
         <activity android:name=".post.PostViewActivity" />
 
         <activity
@@ -51,17 +40,8 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
-
-        <meta-data
-            android:name="com.google.android.wearable.standalone"
-            android:value="true" />
-        <uses-library
-            android:name="com.google.android.wearable"
-            android:required="true" />
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
     </application>
-
-    <uses-feature android:name="android.hardware.type.watch" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />

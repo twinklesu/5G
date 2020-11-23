@@ -24,6 +24,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.weather.post.PostActivity;
 import com.example.weather.post.PostWriteActivity;
 import com.example.weather.R;
 
@@ -91,7 +92,7 @@ public class HomeFragment extends Fragment {
         goToBoard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeFragment.this.getContext(), PostWriteActivity.class); // 후에 연결 수정 필요
+                Intent intent = new Intent(HomeFragment.this.getContext(), PostActivity.class); // 후에 연결 수정 필요
                 startActivity(intent);
             }
         });

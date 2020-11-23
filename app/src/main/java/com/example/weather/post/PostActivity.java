@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,6 +28,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -39,9 +41,9 @@ public class PostActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
 
-        ListView listView = findViewById(android.R.id.list);
-        final ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.activity_post_view);
-
+        ListView listView = findViewById(R.id.postList);
+        final ArrayList<PostItem> postItems = new ArrayList<>();
+        final ListViewAdapter adapter = new ListViewAdapter(this, postItems);
         listView.setAdapter(adapter);
 
         RequestQueue queue = Volley.newRequestQueue(this);
@@ -54,13 +56,14 @@ public class PostActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            JSONObject count = (JSONObject) response.get("count");
-                            JSONArray results = (JSONArray) response.get("results");
+                            JSONArray results = response.getJSONArray("results");
 
-                            for(int i = 0; i < Integer.parseInt(count.toString()); i++) {
-//                                adapter.add();
+                            for(int i = 0; i < results.length(); i++) {
+                                JSONObject result = results.getJSONObject(i);
+                                PostItem item = new PostItem(result.getString("post_id"), result.getString("post_title"), result.getString("post_content"));
+                                postItems.add(item);
                             }
-
+                            adapter.notifyDataSetChanged();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
