@@ -64,13 +64,16 @@
             android:layout_marginTop="20dp"
             tools:src="@tools:sample/avatars" />
 
-        <ImageView
-            android:id="@+id/imageView5"
+        <TextView
+            android:id="@+id/txtNickName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
-            android:src="@drawable/more" />
+            android:hint="닉네임"
+            android:textColor="#2C2727"
+            android:textColorHint="#393131"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/txtTime"
@@ -82,16 +85,13 @@
             android:textColor="#2C2727"
             android:textColorHint="#393131" />
 
-        <TextView
-            android:id="@+id/txtNickName"
+        <ImageView
+            android:id="@+id/imageView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="100dp"
             android:layout_marginTop="20dp"
-            android:hint="닉네임"
-            android:textColor="#2C2727"
-            android:textColorHint="#393131"
-            android:textSize="24sp" />
+            android:src="@drawable/more" />
 
     </LinearLayout>
 
