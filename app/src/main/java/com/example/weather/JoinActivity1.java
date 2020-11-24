@@ -34,6 +34,7 @@ public class JoinActivity1 extends AppCompatActivity {
 
         edtId = findViewById(R.id.edtId);
         edtPw = findViewById(R.id.edtPw);
+        edtPwChk = findViewById(R.id.edtPwChk);
 
         btnNext = findViewById(R.id.btnNext);
 
@@ -53,10 +54,9 @@ public class JoinActivity1 extends AppCompatActivity {
                         new Response.Listener<JSONObject>() {
                             @Override
                             public void onResponse(JSONObject response) {
-                                try {
-                                    String result = response.getJSONObject("message").toString();
+                                    Boolean result = response.optBoolean("message");
 
-                                    if (result.equals(true)) {
+                                    if (result) {
                                         if (edtPw.getText().toString().equals(edtPwChk.getText().toString())) {
                                             editor.putString("join_id", edtId.getText().toString());
                                             editor.putString("join_pw", edtPw.getText().toString());
@@ -76,9 +76,6 @@ public class JoinActivity1 extends AppCompatActivity {
                                         Toast toast = Toast.makeText(getApplicationContext(), "ID가 중복입니다. 다른 ID를 입력하세요.", Toast.LENGTH_LONG);
                                         toast.show();
                                     }
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
                             }
                         },
                         new Response.ErrorListener() {
