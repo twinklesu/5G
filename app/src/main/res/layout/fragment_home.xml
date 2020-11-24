@@ -73,9 +73,9 @@
                                 android:id="@+id/gps2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="상계 10동"
                                 android:layout_marginLeft="15dp"
                                 android:layout_marginRight="15dp"
+                                android:text="상계 10동"
                                 android:textColor="#000000"
                                 android:textSize="20dp" />
 
@@ -95,10 +95,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="15dp"
-                            android:textStyle="bold"
                             android:text="쌀쌀하고, 건조해요."
                             android:textColor="#5555A3"
-                            android:textSize="30dp" />
+                            android:textSize="30dp"
+                            android:textStyle="bold" />
 
                     </LinearLayout>
 
@@ -118,18 +118,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/weatherMeteorological"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_marginTop="20dp"
-                                android:text="기상청 날씨"
-                                android:textAlignment="center"
-                                android:textColor="#000000"
-                                android:textStyle="bold"
-                                android:textSize="30dp" />
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -167,6 +155,18 @@
                                     android:textSize="20dp" />
                             </LinearLayout>
 
+                            <TextView
+                                android:id="@+id/weatherMeteorological"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="20dp"
+                                android:text="기상청 날씨"
+                                android:textAlignment="center"
+                                android:textColor="#000000"
+                                android:textSize="30dp"
+                                android:textStyle="bold" />
+
                         </LinearLayout>
 
                     </LinearLayout>
@@ -174,8 +174,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="50dp"
                         android:layout_marginStart="15dp"
+                        android:layout_marginTop="50dp"
                         android:orientation="horizontal">
 
                         <ImageView
@@ -189,17 +189,17 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
+                            android:background="@drawable/codibox"
                             android:text="코디추천4"
-                            android:textColor="#000000"
                             android:textAlignment="center"
-                            android:background="@drawable/codibox" />
+                            android:textColor="#000000" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_marginTop="5dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="15dp"
+                        android:layout_marginTop="5dp"
                         android:orientation="horizontal">
 
                         <ImageView
@@ -217,7 +217,6 @@
                     </LinearLayout>
 
                 </LinearLayout>
-
 
 
             </FrameLayout>
