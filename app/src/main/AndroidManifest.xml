@@ -9,12 +9,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".VoteActivity"
-            android:theme="@android:style/Theme.Dialog"
-        />
+        <activity
+            android:name=".VoteActivity"
+            android:theme="@android:style/Theme.Dialog" />
         <activity
             android:name=".post.PostDetailActivity"
-            android:label="@string/title_activity_post_detail" />
+            android:label="@string/title_activity_post_detail"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".post.PostViewActivity" />
         <activity
             android:name=".post.PostWriteModifyActivity"

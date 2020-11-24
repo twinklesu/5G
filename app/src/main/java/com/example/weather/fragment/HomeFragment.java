@@ -179,8 +179,6 @@ public class HomeFragment extends Fragment {
         });
 
         return rootView;
-
-
     }
 
     public static int TO_GRID = 0;
