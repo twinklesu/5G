@@ -31,7 +31,7 @@
             android:layout_marginRight="10dp"
             android:layout_weight="0.2"
             android:background="#00FFFFFF"
-            tools:srcCompat="@android:drawable/ic_menu_edit" />
+            android:src="@drawable/weather_cloudy" />
     </LinearLayout>
 
     <LinearLayout
