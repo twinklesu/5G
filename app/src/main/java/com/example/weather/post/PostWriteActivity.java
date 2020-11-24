@@ -3,7 +3,9 @@ package com.example.weather.post;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -43,10 +45,13 @@ public class PostWriteActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Log.d(TAG, "Click!");
 
+                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                String user_id = sharedPreferences.getString("user_id", "null");
+
                 Map<String, String> post_json = new HashMap<>();
                 post_json.put("post_title", title.getText().toString());
                 post_json.put("post_content", context.getText().toString());
-                post_json.put("post_id", "ej"); // 로그인 구현 완료 시 수정 필요
+                post_json.put("post_id", user_id); // 로그인 구현 완료 시 수정 필요 --> 수정 완료
 
                 String url = "http://weather.eba-eqpgap7p.ap-northeast-2.elasticbeanstalk.com/post/";
                 final JSONObject parameter = new JSONObject(post_json);
