@@ -37,6 +37,7 @@ import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -417,6 +418,7 @@ public class HomeFragment extends Fragment {
     }
     public static String formatTimeString(long regTime) {
         long curTime = System.currentTimeMillis();
+        Log.d(TAG, Long.toString(regTime) + " " + Long.toString(curTime));
         long diffTime = (curTime - regTime) / 1000;
         String msg = null;
         if (diffTime < TIME_MAXIMUM.SEC) {
@@ -433,16 +435,19 @@ public class HomeFragment extends Fragment {
             msg = (diffTime) + "년 전";
         }
 
-        Log.d(TAG, "formatTimeString : " + diffTime + " / " + curTime);
         return msg;
     }
 
     public long timeToMill(String time) {
-        String realTime = time.substring(time.indexOf("T")+1);
-        String splitTime[] = realTime.split(":");
+        String parseString = time.replace("T", " ").replace("+09:00", "");
+        SimpleDateFormat fm = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = null;
+        try {
+            date = fm.parse(parseString);
+        } catch (ParseException e) {
+            Log.d(TAG, "", e);
+        }
 
-        Log.d(TAG, "timeTomill " + splitTime[0] + " " + splitTime[1] + " " + splitTime[2] + "/n" + Long.parseLong(splitTime[0]) * 60 * 60 + Long.parseLong(splitTime[1]) * 60 + Long.parseLong(splitTime[2].substring(0, splitTime[2].indexOf("+"))));
-
-        return Long.parseLong(splitTime[0]) * 24 * 60 * 60 + Long.parseLong(splitTime[1]) * 60 + Long.parseLong(splitTime[2].substring(0, splitTime[2].indexOf("+")));
+        return date.getTime();
     }
 }
