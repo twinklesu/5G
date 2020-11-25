@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class VoteActivity extends Activity {
 
-    TextView txtText;
+    //TextView txtText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +23,12 @@ public class VoteActivity extends Activity {
         setContentView(R.layout.activity_vote);
 
         //UI 객체생성
-        txtText = (TextView)findViewById(R.id.txtText);
+        //txtText = (TextView)findViewById(R.id.txtText);
 
         //데이터 가져오기
         Intent intent = getIntent();
         String data = intent.getStringExtra("data");
-        txtText.setText(data);
+        //txtText.setText(data);
     }
 
     //확인 버튼 클릭
