@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -93,6 +94,9 @@ public class PostDetailActivity extends AppCompatActivity {
                             public void onResponse(JSONObject response) {
                                 Toast toast = Toast.makeText(PostDetailActivity.this, "댓글이 작성 되었습니다.", Toast.LENGTH_LONG);
                                 toast.show();
+
+                                recreate();
+                                comment.setText("");
                             }
                         },
                         new Response.ErrorListener() {
