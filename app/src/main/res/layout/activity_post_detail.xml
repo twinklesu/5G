@@ -141,21 +141,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/imgAttatch"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
-            android:src="@android:drawable/sym_def_app_icon" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
         android:layout_weight="0.5"
         android:orientation="vertical">
 
@@ -173,22 +158,10 @@
         android:layout_weight="5"
         android:orientation="vertical">
 
-        <ScrollView
+        <ListView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <ListView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:cacheColorHint="#222020"></ListView>
-            </LinearLayout>
-        </ScrollView>
-
+            android:layout_height="match_parent"
+            android:cacheColorHint="#222020"></ListView>
     </LinearLayout>
 
     <LinearLayout
@@ -201,8 +174,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="7"
             android:background="@drawable/rounded_edittext"
             android:ems="10"
@@ -220,7 +193,7 @@
             android:id="@+id/btnComment"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
             android:layout_weight="1"
             android:background="#00FFFFFF"
