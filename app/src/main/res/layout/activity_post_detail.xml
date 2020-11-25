@@ -135,6 +135,7 @@
             android:paddingTop="5dp"
             android:paddingRight="10dp"
             android:paddingBottom="5dp"
+            android:textColor="#000000"
             android:textColorHint="#635F5F" />
     </LinearLayout>
 
