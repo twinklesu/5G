@@ -101,7 +101,8 @@ public class PostActivity extends AppCompatActivity {
                 intent.putExtra("ID", postItems.get(position).getId());
                 intent.putExtra("Title", postItems.get(position).getTitle());
                 intent.putExtra("Content", postItems.get(position).getContent());
-                intent.putExtra("PostNo", String.valueOf(position + post_count));
+                intent.putExtra("PostNo", String.valueOf(post_count - position));
+                intent.putExtra("PostCount", post_count);
                 startActivity(intent);
             }
         });
