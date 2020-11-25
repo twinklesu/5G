@@ -3,6 +3,7 @@ package com.example.weather.post;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -68,6 +69,9 @@ public class PostWriteActivity extends AppCompatActivity {
                                 toast.show();
 
                                 Log.d(TAG, "Post Success : " + parameter);
+
+                                Intent intent = new Intent(PostWriteActivity.this, PostActivity.class);
+                                startActivity(intent);
                             }
                         },
                         new Response.ErrorListener() {

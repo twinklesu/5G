@@ -68,11 +68,8 @@ public class JoinActivity2 extends AppCompatActivity {
                 join_json.put("user_id", user_id);
                 join_json.put("user_password", user_pw);
                 join_json.put("user_name", edtName.getText().toString());
-                join_json.put("user_nickname", null);
-                join_json.put("user_age", null);
                 join_json.put("user_sex", String.valueOf(user_sex));
                 join_json.put("user_tel", edtTel.getText().toString());
-                join_json.put("user_address", null);
 
                 JSONObject parameter = new JSONObject(join_json);
 

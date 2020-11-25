@@ -131,32 +131,32 @@ public class HomeFragment extends Fragment {
         String url = urlBuilder.toString();
         Log.d(TAG, "URL : " + url);
 
-        JsonObjectRequest jsonArrayRequest = new JsonObjectRequest(Request.Method.GET,
-                url, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Log.d(TAG, "Success : " + response.toString());
-                        try {
-                            JSONObject result = (JSONObject) response.get("result");
-                            JSONObject body = (JSONObject) result.get("body");
-                            JSONObject items = (JSONObject) body.get("items");
-                            JSONArray item = (JSONArray) items.get("item");
-
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-                Log.d(TAG, "FAIL");
-            }
-        }
-        );
-        queue.add(jsonArrayRequest);
+//        JsonObjectRequest jsonArrayRequest = new JsonObjectRequest(Request.Method.GET,
+//                url, null,
+//                new Response.Listener<JSONObject>() {
+//                    @Override
+//                    public void onResponse(JSONObject response) {
+//                        Log.d(TAG, "Success : " + response.toString());
+//                        try {
+//                            JSONObject result = (JSONObject) response.get("result");
+//                            JSONObject body = (JSONObject) result.get("body");
+//                            JSONObject items = (JSONObject) body.get("items");
+//                            JSONArray item = (JSONArray) items.get("item");
+//
+//
+//                        } catch (JSONException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                error.printStackTrace();
+//                Log.d(TAG, "FAIL");
+//            }
+//        }
+//        );
+//        queue.add(jsonArrayRequest);
 
         setBoardPost();
         setWeather(url);
