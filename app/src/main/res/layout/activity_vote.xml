@@ -4,65 +4,357 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     android:orientation="vertical"
     tools:context=".VoteActivity">
 
     <!-- 타이틀바 -->
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:text="Notice"
-            android:textSize="20sp"
-            android:textColor="#fff"
-            android:gravity="center"
-            android:background="#ff7a00"
-            android:layout_width="match_parent"
-            android:layout_height="53dp" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:background="#00FFFFFF"
+            android:backgroundTint="#00FFFFFF"
+            android:src="@drawable/close" />
+
     </LinearLayout>
     <!-- //end 타이틀바 -->
 
     <!-- Notice -->
     <LinearLayout
-        android:padding="24dp"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
         <TextView
-            android:id="@+id/txtText"
-            android:textSize="15sp"
-            android:textColor="#000"
-            android:alpha="0.87"
-            android:gravity="center"
-            android:layout_marginBottom="3dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:text="지금 날씨는 어떤가요?"
+            android:textColor="#020202"
+            android:textSize="20sp" />
     </LinearLayout>
-    <!-- Notice -->
 
-    <View
-        android:background="#66bdbdbd"
-        android:layout_width="match_parent"
-        android:layout_height="1dp" />
-
-    <!-- 닫기 버튼 -->
     <LinearLayout
-        android:orientation="horizontal"
-        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/chkbox1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/check_box"
+                android:button="@android:color/transparent"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:text="포근해요"
+                android:textColor="#322B2B"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chkbox3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/check_box"
+                android:button="@android:color/transparent"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:text="선선해요"
+                android:textColor="#322B2B"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chkbox5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/check_box"
+                android:button="@android:color/transparent"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:text="추워요"
+                android:textColor="#322B2B"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chkbox7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/check_box"
+                android:button="@android:color/transparent"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:text="건조해요"
+                android:textColor="#322B2B"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/chkbox2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/check_box"
+                android:button="@android:color/transparent"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:text="화창해요"
+                android:textColor="#322B2B"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chkbox4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/check_box"
+                android:button="@android:color/transparent"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:text="쌀쌀해요"
+                android:textColor="#322B2B"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chkbox6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/check_box"
+                android:button="@android:color/transparent"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:text="얼어죽어요"
+                android:textColor="#322B2B"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chkbox8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/check_box"
+                android:button="@android:color/transparent"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:text="일교차가 심해요"
+                android:textColor="#322B2B"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="오늘 날씨에 추천하는 코디는?"
+            android:textColor="#020202"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <!-- Notice -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/chkbox9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/check_box"
+                android:button="@android:color/transparent"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:text="무스탕"
+                android:textColor="#322B2B"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chkbox11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/check_box"
+                android:button="@android:color/transparent"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:text="트랜치코트"
+                android:textColor="#322B2B"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chkbox13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/check_box"
+                android:button="@android:color/transparent"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:text="경량 패딩"
+                android:textColor="#322B2B"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chkbox15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/check_box"
+                android:button="@android:color/transparent"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:text="기모 후드"
+                android:textColor="#322B2B"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/chkbox10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/check_box"
+                android:button="@android:color/transparent"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:text="자켓"
+                android:textColor="#322B2B"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chkbox12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/check_box"
+                android:button="@android:color/transparent"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:text="코트"
+                android:textColor="#322B2B"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chkbox14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/check_box"
+                android:button="@android:color/transparent"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:text="니트/가디건"
+                android:textColor="#322B2B"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/chkbox16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/check_box"
+                android:button="@android:color/transparent"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:text="롱패딩/패딩"
+                android:textColor="#322B2B"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
         <Button
-            android:text="확인"
-            android:textSize="15sp"
-            android:textColor="#ff7a00"
-            android:padding="16dp"
-            android:gravity="center"
-            android:background="#00000000"
             android:layout_width="match_parent"
             android:layout_height="53dp"
-            android:onClick="mOnClose"/>
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="#8989d9"
+            android:gravity="center"
+            android:onClick="mOnClose"
+            android:padding="16dp"
+            android:text="공유하기"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
     </LinearLayout>
+
+    <!-- 닫기 버튼 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#66bdbdbd" />
     <!--// 닫기 버튼 -->
 
 
