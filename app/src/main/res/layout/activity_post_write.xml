@@ -75,6 +75,7 @@
                 android:paddingTop="5dp"
                 android:paddingRight="10dp"
                 android:paddingBottom="5dp"
+                android:textColor="#020202"
                 android:textColorHint="#151414"
                 android:textSize="22sp" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -99,6 +100,7 @@
             android:paddingTop="5dp"
             android:paddingRight="10dp"
             android:paddingBottom="5dp"
+            android:textColor="#020202"
             android:textColorHint="#635F5F" />
     </LinearLayout>
 
