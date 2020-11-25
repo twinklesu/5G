@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
-            tools:src="@tools:sample/avatars" />
+            android:src="@drawable/weather_cloudy"/>
 
         <TextView
             android:id="@+id/txtNickName"

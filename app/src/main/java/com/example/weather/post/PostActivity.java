@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -43,7 +44,7 @@ public class PostActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
 
-        ListView listView = findViewById(R.id.postList);
+        final ListView listView = findViewById(R.id.postList);
         final ArrayList<PostItem> postItems = new ArrayList<>();
         final ListViewAdapter adapter = new ListViewAdapter(this, postItems);
         listView.setAdapter(adapter);
@@ -81,6 +82,19 @@ public class PostActivity extends AppCompatActivity {
         );
 
         queue.add(jsonObjectRequest);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.d(TAG, "onItemClick");
+
+                Intent intent = new Intent(PostActivity.this, PostDetailActivity.class);
+                intent.putExtra("ID", postItems.get(position).getId());
+                intent.putExtra("Title", postItems.get(position).getTitle());
+                intent.putExtra("Content", postItems.get(position).getContent());
+                startActivity(intent);
+            }
+        });
 
         ImageButton write = findViewById(R.id.imageButton);
         write.setOnClickListener(new View.OnClickListener() {

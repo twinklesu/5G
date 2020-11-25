@@ -1,6 +1,7 @@
 package com.example.weather.post;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,7 +41,7 @@ public class ListViewAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View postItem = inflater.inflate(R.layout.activity_post_view, parent, false);
+        final View postItem = inflater.inflate(R.layout.activity_post_view, parent, false);
         PostItem data = items.get(position);
 
         TextView title = postItem.findViewById(R.id.txtPostTitle);
@@ -51,12 +52,12 @@ public class ListViewAdapter extends BaseAdapter {
         content.setText(data.getContent());
         nickname.setText(data.getId());
 
-        postItem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d(TAG, "onClick: my position is " + Integer.toString(position));
-            }
-        });
+//        postItem.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Log.d(TAG, "onClick: my position is " + Integer.toString(position));
+//            }
+//        });
 
         return postItem;
     }
