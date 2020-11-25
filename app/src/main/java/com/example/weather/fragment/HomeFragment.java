@@ -8,6 +8,8 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
@@ -167,6 +169,8 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         Log.d(TAG, "onCreateView: ");
+
+        setHasOptionsMenu(true);
         rootView = inflater.inflate(R.layout.fragment_home, container, false);
 
         ImageButton vote = (ImageButton) rootView.findViewById(R.id.vote);
@@ -180,6 +184,11 @@ public class HomeFragment extends Fragment {
         });
 
         return rootView;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
     }
 
     public static int TO_GRID = 0;
