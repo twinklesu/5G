@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.Image;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -31,21 +30,12 @@ import java.util.Map;
 public class PostWriteActivity extends AppCompatActivity {
 
     String TAG = this.getClass().getSimpleName();
-    ImageButton imgbtnBack;
+    ImageButton imgbtnPostWriteBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_write);
-
-        imgbtnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i= new Intent(PostWriteActivity.this, PostActivity.class);
-                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(i);
-            }
-        });
 
         Button register = findViewById(R.id.btnOk);
         final EditText title = findViewById(R.id.txtTitle);
@@ -99,6 +89,16 @@ public class PostWriteActivity extends AppCompatActivity {
                 );
 
                 queue.add(jsonObjectRequest);
+            }
+        });
+
+        imgbtnPostWriteBack = findViewById(R.id.imgbtnPostWriteBack);
+        imgbtnPostWriteBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(PostWriteActivity.this, PostActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
             }
         });
     }

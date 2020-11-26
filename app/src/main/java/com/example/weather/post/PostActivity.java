@@ -19,7 +19,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.weather.MainActivity;
 import com.example.weather.R;
-import com.example.weather.fragment.HomeFragment;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,15 +31,16 @@ public class PostActivity extends AppCompatActivity {
 
     String TAG = this.getClass().getSimpleName();
     int post_count;
-    ImageButton imgbtnBack;
+    ImageButton imgbtnPostBack;
+    private FloatingActionButton fabtnPlus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
 
-        imgbtnBack = findViewById(R.id.imgbtnBack);
-        imgbtnBack.setOnClickListener(new View.OnClickListener() {
+        imgbtnPostBack = findViewById(R.id.imgbtnPostBack);
+        imgbtnPostBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i= new Intent(PostActivity.this, MainActivity.class);
@@ -106,8 +107,8 @@ public class PostActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton write = findViewById(R.id.imgbtnBack);
-        write.setOnClickListener(new View.OnClickListener() {
+        fabtnPlus = findViewById(R.id.fabtnPlus);
+        fabtnPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PostActivity.this, PostWriteActivity.class);

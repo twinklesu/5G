@@ -475,7 +475,7 @@
                     tools:src="@drawable/weather_cloudy" />
 
                 <ImageButton
-                    android:id="@+id/imgbtnBack"
+                    android:id="@+id/imgbtnPostWriteBack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
