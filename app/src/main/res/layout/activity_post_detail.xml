@@ -130,6 +130,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/border"
+            android:enabled="false"
             android:hint="내용 자리"
             android:paddingLeft="10dp"
             android:paddingTop="5dp"
