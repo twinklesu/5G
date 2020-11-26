@@ -94,7 +94,7 @@ public class VoteActivity extends Activity {
         CheckBox weathers[] = { fogeun, fewCold, cold, dry, sunny, veryWindy, veryColdAlmostDie, bigDegreeDiff };
 
         for(CheckBox w : weathers) {
-            if(w.isSelected()) weather = w.getText().toString();
+            if(w.isChecked()) weather = w.getText().toString();
         }
 
         weather_json.put("weather", weather);
