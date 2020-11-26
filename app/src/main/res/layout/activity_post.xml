@@ -2,65 +2,49 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
     tools:context=".post.PostActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="0.8"
         android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="10"
-            android:text="게시판"
-            android:textSize="36sp" />
 
         <ImageButton
             android:id="@+id/imageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="13dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="0.2"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="25dp"
             android:background="#00FFFFFF"
-            android:src="@drawable/weather_cloudy" />
+            android:src="@drawable/arrow_left" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="자유게시판"
+            android:textColor="#756C6C"
+            android:textSize="24sp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/editTextTextPersonName"
-            android:layout_width="wrap_content"
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="10"
-            android:ems="10"
-            android:hint="검색어를 입력하세요."
-            android:inputType="textPersonName" />
-
-        <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="13dp"
-            android:layout_weight="0.5"
-            android:background="#00FFFFFF"
-            android:scrollbarSize="10dp"
-            app:srcCompat="?android:attr/actionModeWebSearchDrawable" />
+            app:srcCompat="@drawable/advertisement" />
     </LinearLayout>
 
     <LinearLayout
