@@ -36,7 +36,8 @@ public class VoteActivity extends Activity {
 
     //TextView txtText;
     CheckBox fogeun, fewCold, cold, dry, sunny, veryWindy, veryColdAlmostDie, bigDegreeDiff;
-    String user_id, weather;
+    CheckBox mustang,trench, padding, hoodie, jacket, coat, neat, longPadding;
+    String user_id, weather, clothe;
     ImageButton imgbtnCancle;
 
     @Override
@@ -74,6 +75,17 @@ public class VoteActivity extends Activity {
         veryColdAlmostDie = findViewById(R.id.chkbox6);
         bigDegreeDiff = findViewById(R.id.chkbox8);
 
+        mustang = findViewById(R.id.chkbox9);
+        trench = findViewById(R.id.chkbox11);
+        padding = findViewById(R.id.chkbox13);
+        hoodie = findViewById(R.id.chkbox15);
+
+        jacket = findViewById(R.id.chkbox10);
+        coat = findViewById(R.id.chkbox12);
+        neat = findViewById(R.id.chkbox14);
+        longPadding = findViewById(R.id.chkbox16);
+
+
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         user_id = sharedPreferences.getString("user_id", null);
     }
@@ -92,9 +104,10 @@ public class VoteActivity extends Activity {
         weather_json.put("user_id", user_id);
 
         CheckBox weathers[] = { fogeun, fewCold, cold, dry, sunny, veryWindy, veryColdAlmostDie, bigDegreeDiff };
+        CheckBox clothes[] = { mustang,trench, padding, hoodie, jacket, coat, neat, longPadding };
 
         for(CheckBox w : weathers) {
-            if(w.isChecked()) weather = w.getText().toString();
+            if (w.isChecked()) weather = w.getText().toString();
         }
 
         weather_json.put("weather", weather);
@@ -119,7 +132,38 @@ public class VoteActivity extends Activity {
                 }
         );
 
+        HashMap<String, String> clothes_json = new HashMap<>();
+        clothes_json.put("user_id", user_id);
+
+        for(CheckBox c : clothes) if(c.isChecked()) clothe = c.getText().toString();
+
+        clothes_json.put("fashion", clothe);
+
+        JSONObject parameter_clothe = new JSONObject(clothes_json);
+
+        String fashion_url = "http://weather.eba-eqpgap7p.ap-northeast-2.elasticbeanstalk.com/fashion-survey/";
+
+        JsonObjectRequest jsonObjectRequest1 = new JsonObjectRequest(Request.Method.POST,
+                fashion_url,
+                parameter_clothe,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast toast = Toast.makeText(VoteActivity.this, "설문 응답 중 오류가 발생했습니다.\n잠시 후 다시 시도해주세요.", Toast.LENGTH_LONG);
+                        toast.show();
+
+                        error.printStackTrace();
+                    }
+                });
+
         queue.add(jsonObjectRequest);
+        queue.add(jsonObjectRequest1);
 
         //액티비티(팝업) 닫기
         finish();
