@@ -32,6 +32,7 @@ import com.example.weather.VoteActivity;
 import com.example.weather.post.PostActivity;
 import com.example.weather.post.PostWriteActivity;
 import com.example.weather.R;
+import com.example.weather.weather.WeathersPickActivity;
 
 
 import org.json.JSONArray;
@@ -85,6 +86,15 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeFragment.this.getContext(), PostActivity.class); // 후에 연결 수정 필요
+                startActivity(intent);
+            }
+        });
+
+        ImageButton goToWeathersPick = getActivity().findViewById(R.id.btn_wethers_pick);
+        goToWeathersPick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeFragment.this.getContext(), WeathersPickActivity.class);
                 startActivity(intent);
             }
         });
