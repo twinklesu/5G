@@ -15,6 +15,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.weather.MainActivity;
@@ -59,21 +60,21 @@ public class PostActivity extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(this);
         String url = "http://weather.eba-eqpgap7p.ap-northeast-2.elasticbeanstalk.com/post/";
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET,
                 url,
                 null,
-                new Response.Listener<JSONObject>() {
+                new Response.Listener<JSONArray>() {
                     @Override
-                    public void onResponse(JSONObject response) {
+                    public void onResponse(JSONArray response) {
                         try {
-                            JSONArray results = response.getJSONArray("results");
+                            JSONArray results = response;
 
                             for(int i = 0; i < results.length(); i++) {
                                 JSONObject result = results.getJSONObject(i);
                                 PostItem item = new PostItem(result.getString("post_id"), result.getString("post_title"), result.getString("post_content"));
                                 postItems.add(item);
                             }
-                            post_count = response.getInt("count");
+                            post_count = response.length();
 
                             adapter.notifyDataSetChanged();
                         } catch (JSONException e) {
@@ -90,7 +91,7 @@ public class PostActivity extends AppCompatActivity {
                 }
         );
 
-        queue.add(jsonObjectRequest);
+        queue.add(jsonArrayRequest);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
