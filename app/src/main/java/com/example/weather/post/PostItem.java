@@ -5,12 +5,14 @@ public class PostItem {
     private String id;
     private String title;
     private String content;
+    private String time;
 
 
-    public PostItem(String id, String title, String content) {
+    public PostItem(String id, String title, String content, String time) {
         this.id = id;
         this.title = title;
         this.content = content;
+        this.time = time;
     }
 
     public void setId(String id) {
@@ -35,5 +37,13 @@ public class PostItem {
 
     public String getContent() {
         return content;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 }
