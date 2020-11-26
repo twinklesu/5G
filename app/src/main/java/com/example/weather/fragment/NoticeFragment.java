@@ -18,28 +18,14 @@ import android.widget.Toast;
 
 import com.example.weather.R;
 
-public class NoticeFragment extends ListFragment {
+public class NoticeFragment extends Fragment {
 
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        View rootView = inflater.inflate(R.layout.fragment_notice, container, false);
-
-        String[] values = new String[] {"1", "2", "3", "4"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, values);
-        setListAdapter(adapter);
-
-        return rootView;
+        return inflater.inflate(R.layout.fragment_notice, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-    }
-
-    //아이템 클릭 이벤트
-    public void onListItemClick(ListView l, View v, int position, long id) {
-        String strText = (String) l.getItemAtPosition(position);
-        Log.d("Fragment: ", position + ": " + strText);
-        Toast.makeText(this.getContext(), "클릭: " + position + " " + strText, Toast.LENGTH_LONG).show();
     }
 }
