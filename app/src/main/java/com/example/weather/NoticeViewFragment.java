@@ -7,16 +7,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class SingerItemView extends LinearLayout {
+public class NoticeViewFragment extends LinearLayout {
     TextView txtNoti;
     ImageView imageView;
 
-    public SingerItemView(Context context) {
+    public NoticeViewFragment(Context context) {
         super(context);
         init(context);
     }
 
-    public SingerItemView (Context context, AttributeSet attrs) {
+    public NoticeViewFragment(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
@@ -26,7 +26,7 @@ public class SingerItemView extends LinearLayout {
 
     private void init(Context context) {
         LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(R.layout.single_item_list, this, true);
+        inflater.inflate(R.layout.fragment_notice_view, this, true);
 
         txtNoti = findViewById(R.id.txtNoti);
         imageView = findViewById(R.id.imageView);
