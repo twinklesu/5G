@@ -3,23 +3,13 @@ package com.example.weather.post;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.app.VoiceInteractor;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -34,10 +24,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 
 public class PostActivity extends AppCompatActivity {
 
@@ -107,7 +93,7 @@ public class PostActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton write = findViewById(R.id.imageButton);
+        ImageButton write = findViewById(R.id.imgbtnBack);
         write.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
