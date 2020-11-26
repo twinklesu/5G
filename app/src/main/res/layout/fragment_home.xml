@@ -184,6 +184,7 @@
                             android:layout_marginStart="5dp"
                             android:background="@drawable/codibox"
                             android:text="코디추천4"
+                            android:gravity="center|center_horizontal|center_vertical"
                             android:textAlignment="center"
                             android:textColor="#000000" />
                         <TextView
@@ -193,6 +194,7 @@
                             android:layout_marginStart="5dp"
                             android:background="@drawable/codibox"
                             android:text="코디추천4"
+                            android:gravity="center|center_horizontal|center_vertical"
                             android:textAlignment="center"
                             android:textColor="#000000" />
                     </LinearLayout>
@@ -212,6 +214,7 @@
                             android:background="@drawable/codibox"
                             android:text="코디추천4"
                             android:textAlignment="center"
+                            android:gravity="center|center_horizontal|center_vertical"
                             android:textColor="#000000" />
                         <TextView
                             android:id="@+id/codi_recommend3"
@@ -219,6 +222,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
                             android:background="@drawable/codibox"
+                            android:gravity="center|center_horizontal|center_vertical"
                             android:text="코디추천4"
                             android:textAlignment="center"
                             android:textColor="#000000" />
