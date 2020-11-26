@@ -90,7 +90,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        ImageButton goToWeathersPick = getActivity().findViewById(R.id.btn_wethers_pick);
+        Button goToWeathersPick = getActivity().findViewById(R.id.moreButton3);
         goToWeathersPick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
