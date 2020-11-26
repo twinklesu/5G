@@ -25,6 +25,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.weather.VoteActivity;
@@ -36,6 +37,7 @@ import com.example.weather.R;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -162,6 +164,7 @@ public class HomeFragment extends Fragment {
 
         setBoardPost();
         setWeather(url);
+        setVoteResult();
     }
 
     @Override
@@ -461,6 +464,64 @@ public class HomeFragment extends Fragment {
     }
 
     public void setVoteResult() {
+        RequestQueue queue = Volley.newRequestQueue(this.getContext());
+        String url_fashion = "http://weather.eba-eqpgap7p.ap-northeast-2.elasticbeanstalk.com/fashion-result/";
+        String url_weather = "http://weather.eba-eqpgap7p.ap-northeast-2.elasticbeanstalk.com/weather-result/";
 
+        final TextView weather_result = getActivity().findViewById(R.id.weatherAgeGender);
+        final ArrayList<TextView> fashion_result = new ArrayList<>();
+        fashion_result.add((TextView) getActivity().findViewById(R.id.codi_recommend1));
+        fashion_result.add((TextView) getActivity().findViewById(R.id.codi_recommend2));
+        fashion_result.add((TextView) getActivity().findViewById(R.id.codi_recommend3));
+        fashion_result.add((TextView) getActivity().findViewById(R.id.codi_recommend4));
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
+                url_weather,
+                null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            JSONArray result = response.getJSONArray("weather");
+                            weather_result.setText(result.getJSONArray(0).getString(0) + result.getJSONArray(1).getString(0));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.d(TAG, "weather result fail");
+                    }
+                }
+        );
+
+        JsonObjectRequest jsonObjectRequest1 = new JsonObjectRequest(Request.Method.GET,
+                url_fashion,
+                null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            JSONArray result = response.getJSONArray("fashion");
+                            for (int i = 0; i < result.length(); i++) {
+                                fashion_result.get(i).setText(result.getJSONArray(i).getString(0));
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.d(TAG, "fashion result fail");
+                    }
+                }
+        );
+
+        queue.add(jsonObjectRequest);
+        queue.add(jsonObjectRequest1);
     }
 }

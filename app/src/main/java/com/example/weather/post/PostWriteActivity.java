@@ -56,7 +56,7 @@ public class PostWriteActivity extends AppCompatActivity {
                 post_json.put("post_content", context.getText().toString());
                 post_json.put("post_id", user_id); // 로그인 구현 완료 시 수정 필요 --> 수정 완료
 
-                String url = "http://weather.eba-eqpgap7p.ap-northeast-2.elasticbeanstalk.com/post/";
+                String url = "http://weather.eba-eqpgap7p.ap-northeast-2.elasticbeanstalk.com/write-post/";
                 final JSONObject parameter = new JSONObject(post_json);
 
                 RequestQueue queue = Volley.newRequestQueue(PostWriteActivity.this);

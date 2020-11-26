@@ -490,6 +490,8 @@
                     android:layout_weight="1"
                     tools:src="@drawable/weather_cloudy" />
             </LinearLayout>
+
+
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
