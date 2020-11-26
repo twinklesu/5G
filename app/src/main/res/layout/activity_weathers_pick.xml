@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:backgroundTint="#FFFFFF"
+    tools:context=".weather.WeathersPickActivity">
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="165dp"
+        android:layout_height="85dp"
+        android:background="#00FFFFFF"
+        android:backgroundTint="#00FFFFFF" />
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#00FFFFFF"
+        app:srcCompat="@drawable/weatherspick" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="600dp">
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="229dp"
+            android:layout_height="168dp"
+            android:layout_gravity="center"
+            android:background="#00FFFFFF"
+            android:backgroundTint="#00FFFFFF" />
+    </FrameLayout>
+</FrameLayout>

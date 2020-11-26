@@ -10,7 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".codi.CodiDetailActivity"></activity>
+        <activity android:name=".weather.WeathersPickDetailActivity"></activity>
+        <activity android:name=".weather.WeathersPickActivity" />
+        <activity android:name=".codi.CodiDetailActivity" />
         <activity android:name=".codi.CodiActivity" />
         <activity
             android:name=".VoteActivity"
@@ -48,9 +50,9 @@
             android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
 </manifest>
