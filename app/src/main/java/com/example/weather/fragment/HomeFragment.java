@@ -459,4 +459,8 @@ public class HomeFragment extends Fragment {
 
         return date.getTime();
     }
+
+    public void setVoteResult() {
+
+    }
 }
