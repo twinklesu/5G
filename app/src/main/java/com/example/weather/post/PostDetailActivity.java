@@ -24,6 +24,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.weather.LoginActivity;
+import com.example.weather.MainActivity;
 import com.example.weather.R;
 
 import org.json.JSONArray;
@@ -38,6 +40,7 @@ public class PostDetailActivity extends AppCompatActivity {
     String TAG = PostDetailActivity.class.getSimpleName();
 
     TextView Id, Title, Content;
+    ImageButton imgbtnBack;
     int post_count;
 
 
@@ -61,6 +64,16 @@ public class PostDetailActivity extends AppCompatActivity {
         Id.setText(id);
         Title.setText(title);
         Content.setText(content);
+
+        imgbtnBack = findViewById(R.id.imgbtnBack);
+        imgbtnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(PostDetailActivity.this, PostActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+            }
+        });
 
         final String url = "http://weather.eba-eqpgap7p.ap-northeast-2.elasticbeanstalk.com/post-comment/";
 

@@ -12,6 +12,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +22,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.weather.post.PostActivity;
+import com.example.weather.post.PostWriteActivity;
 import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONObject;
@@ -34,11 +37,11 @@ public class VoteActivity extends Activity {
     //TextView txtText;
     CheckBox fogeun, fewCold, cold, dry, sunny, veryWindy, veryColdAlmostDie, bigDegreeDiff;
     String user_id, weather;
+    ImageButton imgbtnCancle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         //타이틀바 없애기
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_vote);
@@ -50,6 +53,16 @@ public class VoteActivity extends Activity {
         Intent intent = getIntent();
         String data = intent.getStringExtra("data");
         //txtText.setText(data);
+
+        imgbtnCancle = findViewById(R.id.imgbtnCancle);
+        imgbtnCancle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(VoteActivity.this, MainActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+            }
+        });
 
         fogeun = findViewById(R.id.chkbox1);
         fewCold = findViewById(R.id.chkbox3);

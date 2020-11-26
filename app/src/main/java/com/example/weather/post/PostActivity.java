@@ -17,7 +17,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.weather.MainActivity;
 import com.example.weather.R;
+import com.example.weather.fragment.HomeFragment;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -29,11 +31,22 @@ public class PostActivity extends AppCompatActivity {
 
     String TAG = this.getClass().getSimpleName();
     int post_count;
+    ImageButton imgbtnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
+
+        imgbtnBack = findViewById(R.id.imgbtnBack);
+        imgbtnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(PostActivity.this, MainActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(i);
+            }
+        });
 
         final ListView listView = findViewById(R.id.postList);
         final ArrayList<PostItem> postItems = new ArrayList<>();
