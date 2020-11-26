@@ -3,10 +3,12 @@ package com.example.weather.post;
 public class CommentItem {
     private String comment;
     private String Id;
+    private String time;
 
-    public CommentItem(String comment, String id) {
+    public CommentItem(String comment, String id, String time) {
         this.comment = comment;
         Id = id;
+        this.time = time;
     }
 
     public String getComment() {
@@ -23,5 +25,13 @@ public class CommentItem {
 
     public void setId(String id) {
         Id = id;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 }

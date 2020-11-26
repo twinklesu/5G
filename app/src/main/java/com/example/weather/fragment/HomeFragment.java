@@ -483,7 +483,7 @@ public class HomeFragment extends Fragment {
                     public void onResponse(JSONObject response) {
                         try {
                             JSONArray result = response.getJSONArray("weather");
-                            weather_result.setText(result.getJSONArray(0).getString(0) + "" + result.getJSONArray(1).getString(0));
+                            weather_result.setText(result.getJSONArray(0).getString(0) + " / " + result.getJSONArray(1).getString(0));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

@@ -153,7 +153,7 @@ public class PostDetailActivity extends AppCompatActivity {
                         for (int i = 0; i < response.length(); i++) {
                             try {
                                 JSONObject result = response.getJSONObject(i);
-                                CommentItem commentItem = new CommentItem(result.getString("comment"), result.getString("user_id"));
+                                CommentItem commentItem = new CommentItem(result.getString("comment"), result.getString("user_id"), result.getString("reg_dt"));
                                 commentItems.add(commentItem);
                             } catch (JSONException e) {
                                 e.printStackTrace();

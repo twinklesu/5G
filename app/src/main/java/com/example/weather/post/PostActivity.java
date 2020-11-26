@@ -74,7 +74,7 @@ public class PostActivity extends AppCompatActivity {
                                 PostItem item = new PostItem(result.getString("post_id"), result.getString("post_title"), result.getString("post_content"), result.getString("reg_dt"));
                                 postItems.add(item);
                             }
-                            post_count = response.length();
+                            post_count = response.length() + 1;
 
                             adapter.notifyDataSetChanged();
                         } catch (JSONException e) {
