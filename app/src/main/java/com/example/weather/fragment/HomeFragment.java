@@ -410,11 +410,13 @@ public class HomeFragment extends Fragment {
 
                             Log.d(TAG, "item : " + item.get(4).toString());
 
-                            JSONObject t3h = (JSONObject) item.get(4);
-                            t.setText(t3h.get("fcstValue").toString() + "℃");
-
-                            Log.d(TAG, "t3h : " + t3h.get("fcstValue").toString());
-
+                            for (int i = 0; i < item.length(); i++) {
+                                if (item.getJSONObject(i).getString("category").equals("T3H")); t.setText(item.getJSONObject(i).getString("fcstValue") + "℃");
+                            }
+//                            JSONObject t3h = (JSONObject) item.get(4);
+//                            t.setText(t3h.get("fcstValue").toString() + "℃");
+//
+//                            Log.d(TAG, "t3h : " + t3h.get("fcstValue").toString());
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
