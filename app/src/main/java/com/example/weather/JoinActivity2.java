@@ -59,8 +59,8 @@ public class JoinActivity2 extends AppCompatActivity {
 
         final HashMap<String, String> join_json = new HashMap<>();
 
-        if(radiobtnMan.isSelected()) user_sex = 1;
-        else if(radiobtnWoman.isSelected()) user_sex = 0;
+        if(radiobtnMan.isChecked()) user_sex = 1;
+        else if(radiobtnWoman.isChecked()) user_sex = 0;
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
