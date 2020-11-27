@@ -126,19 +126,18 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
-            android:text="인증번호"
+            android:text="전화번호"
             android:textColor="#686363" />
 
         <EditText
-            android:id="@+id/edtCertification"
+            android:id="@+id/edtTel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/rounded_edittext"
-            android:ems="10"
-            android:inputType="textPostalAddress"
+            android:inputType="phone"
             android:paddingLeft="10dp"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
@@ -151,7 +150,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
-            android:text="전화번호"
+            android:text="인증번호"
             android:textColor="#686363" />
 
         <LinearLayout
@@ -160,15 +159,15 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/edtTel"
+                android:id="@+id/edtCertification"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
-                android:layout_weight="6"
                 android:background="@drawable/rounded_edittext"
-                android:inputType="phone"
+                android:ems="10"
+                android:inputType="textPostalAddress"
                 android:paddingLeft="10dp"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"

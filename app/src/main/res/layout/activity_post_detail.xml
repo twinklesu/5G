@@ -28,11 +28,13 @@
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="5dp"
             android:text="자유게시판"
-            android:textColor="#756C6C"
-            android:textSize="24sp" />
+            android:textColor="#000000"
+            android:textSize="25dp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
@@ -46,6 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
             android:layout_weight="1"
             app:srcCompat="@drawable/divide_bar" />
 
@@ -90,7 +93,7 @@
             android:id="@+id/imageView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="150dp"
             android:layout_marginTop="20dp"
             android:src="@drawable/more" />
 
@@ -131,7 +134,6 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
-            android:background="@drawable/border"
             android:enabled="false"
             android:hint="내용 자리"
             android:paddingLeft="10dp"
@@ -150,9 +152,11 @@
 
         <ImageView
             android:id="@+id/imageView10"
-            android:layout_width="match_parent"
+            android:layout_width="380dp"
             android:layout_height="wrap_content"
+            android:scaleType="fitXY"
             android:layout_marginTop="20dp"
+            android:layout_gravity="center"
             android:src="@drawable/bar" />
     </LinearLayout>
 
