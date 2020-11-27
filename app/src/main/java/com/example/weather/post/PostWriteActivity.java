@@ -92,7 +92,7 @@ public class PostWriteActivity extends AppCompatActivity {
             }
         });
 
-        imgbtnPostWriteBack = findViewById(R.id.imgbtnPostWriteBack);
+        imgbtnPostWriteBack = findViewById(R.id.img4);
         imgbtnPostWriteBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

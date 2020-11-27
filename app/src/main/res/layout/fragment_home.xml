@@ -18,14 +18,22 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="6"
+            android:layout_weight="14"
             android:orientation="vertical">
 
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="6">
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/vote"
+                    android:layout_width="330dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="170dp"
+                    android:background="@drawable/vote_button"
+                    android:scaleType="fitXY" />
 
                 <ImageView
                     android:id="@+id/homeFragmentBackground"
@@ -33,15 +41,6 @@
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
                     android:src="@drawable/home_fragment_background" />
-
-                <ImageButton
-                    android:id="@+id/vote"
-                    android:layout_width="330dp"
-                    android:layout_height="80dp"
-                    android:scaleType="fitXY"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="170dp"
-                    android:background="@drawable/vote_button" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -119,18 +118,6 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <TextView
-                                android:id="@+id/weatherMeteorological"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_marginTop="20dp"
-                                android:text="기상청 날씨"
-                                android:textAlignment="center"
-                                android:textColor="#000000"
-                                android:textSize="30dp"
-                                android:textStyle="bold" />
-
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -167,6 +154,18 @@
                                     android:textSize="20dp" />
                             </LinearLayout>
 
+                            <TextView
+                                android:id="@+id/weatherMeteorological"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="20dp"
+                                android:text="기상청 날씨"
+                                android:textAlignment="center"
+                                android:textColor="#000000"
+                                android:textSize="30dp"
+                                android:textStyle="bold" />
+
                         </LinearLayout>
 
                     </LinearLayout>
@@ -184,15 +183,18 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
                             android:background="@drawable/codibox"
+                            android:gravity="center|center_horizontal|center_vertical"
                             android:text="코디추천4"
                             android:textAlignment="center"
                             android:textColor="#000000" />
+
                         <TextView
                             android:id="@+id/codi_recommend4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
                             android:background="@drawable/codibox"
+                            android:gravity="center|center_horizontal|center_vertical"
                             android:text="코디추천4"
                             android:textAlignment="center"
                             android:textColor="#000000" />
@@ -211,15 +213,18 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
                             android:background="@drawable/codibox"
+                            android:gravity="center|center_horizontal|center_vertical"
                             android:text="코디추천4"
                             android:textAlignment="center"
                             android:textColor="#000000" />
+
                         <TextView
                             android:id="@+id/codi_recommend3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
                             android:background="@drawable/codibox"
+                            android:gravity="center|center_horizontal|center_vertical"
                             android:text="코디추천4"
                             android:textAlignment="center"
                             android:textColor="#000000" />
@@ -242,7 +247,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2"
+            android:layout_weight="5.5"
             android:background="#ffffff"
             android:orientation="vertical">
 
@@ -272,6 +277,7 @@
                     android:text="더보기 >   "
                     android:textAlignment="textEnd"
                     android:textColor="#FF3D62" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -284,9 +290,8 @@
                 <TextView
                     android:id="@+id/title1"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="5dp"
                     android:layout_weight="2"
                     android:text="TextView"
                     android:textAlignment="textStart"
@@ -313,9 +318,8 @@
                 <TextView
                     android:id="@+id/title2"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="5dp"
                     android:layout_weight="2"
                     android:text="TextView"
                     android:textAlignment="textStart"
@@ -344,7 +348,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="5dp"
                     android:layout_weight="2"
                     android:text="TextView"
                     android:textAlignment="textStart"
@@ -373,7 +376,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="5dp"
                     android:layout_weight="2"
                     android:text="TextView"
                     android:textAlignment="textStart"
@@ -402,7 +404,6 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="5dp"
                     android:layout_weight="2"
                     android:text="TextView"
                     android:textAlignment="textStart"
@@ -432,7 +433,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="6"
             android:orientation="vertical">
 
             <LinearLayout
@@ -459,9 +460,107 @@
                     android:background="#ffffff"
                     android:text="더보기 >   "
                     android:textAlignment="textEnd"
-                    android:textColor="#000000" />
+                    android:textColor="#ff3d62" />
 
             </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="6"
+                android:scrollbars="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/imageButton8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="#00FFFFFF"
+                        android:backgroundTint="#00FFFFFF"
+                        android:src="@drawable/codi_img7" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="#00FFFFFF"
+                        android:backgroundTint="#00FFFFFF"
+                        android:src="@drawable/codi_img6" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="#00FFFFFF"
+                        android:backgroundTint="#00FFFFFF"
+                        android:src="@drawable/codi_img5" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="#00FFFFFF"
+                        android:backgroundTint="#00FFFFFF"
+                        android:src="@drawable/codi_img4" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="#00FFFFFF"
+                        android:backgroundTint="#00FFFFFF"
+                        android:src="@drawable/codi_img3" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="#00FFFFFF"
+                        android:backgroundTint="#00FFFFFF"
+                        android:src="@drawable/codi_img2" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:background="#00FFFFFF"
+                        android:backgroundTint="#00FFFFFF"
+                        android:src="@drawable/codi_img1" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/divideBar3"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/divide_bar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -469,27 +568,60 @@
                 android:layout_weight="2"
                 android:orientation="horizontal">
 
-                <ImageButton
-                    android:id="@+id/imageButton3"
+                <TextView
+                    android:id="@+id/weathers_pick"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
                     android:layout_weight="1"
-                    tools:src="@drawable/weather_cloudy" />
+                    android:text="웨더's 픽"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
 
-                <ImageButton
-                    android:id="@+id/imageButton2"
-                    android:layout_width="177dp"
+                <Button
+                    android:id="@+id/moreButton3"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    tools:src="@drawable/weather_cloudy" />
+                    android:background="#ffffff"
+                    android:text="더보기 >   "
+                    android:textAlignment="textEnd"
+                    android:textColor="#FF3D62" />
 
-                <ImageButton
-                    android:id="@+id/imgbtnPostWriteBack"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    tools:src="@drawable/weather_cloudy" />
             </LinearLayout>
+
         </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btn_wethers_pick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/weatherspick_button"
+            android:scaleType="fitXY" />
+
+        <ImageView
+            android:id="@+id/divideBar4"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/divide_bar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="30dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="47dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:background="@drawable/w"
+                android:scaleType="fitXY" />
+        </LinearLayout>
+
+
     </LinearLayout>
 </ScrollView>

@@ -25,17 +25,21 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.weather.VoteActivity;
+import com.example.weather.codi.CodiActivity;
 import com.example.weather.post.PostActivity;
 import com.example.weather.post.PostWriteActivity;
 import com.example.weather.R;
+import com.example.weather.weather.WeathersPickActivity;
 
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -83,6 +87,24 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeFragment.this.getContext(), PostActivity.class); // 후에 연결 수정 필요
+                startActivity(intent);
+            }
+        });
+
+        Button imageButton8 = getActivity().findViewById(R.id.moreButton2);
+        imageButton8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeFragment.this.getContext(), CodiActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button goToWeathersPick = getActivity().findViewById(R.id.moreButton3);
+        goToWeathersPick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeFragment.this.getContext(), WeathersPickActivity.class);
                 startActivity(intent);
             }
         });
@@ -162,6 +184,7 @@ public class HomeFragment extends Fragment {
 
         setBoardPost();
         setWeather(url);
+        setVoteResult();
     }
 
     @Override
@@ -397,11 +420,13 @@ public class HomeFragment extends Fragment {
 
                             Log.d(TAG, "item : " + item.get(4).toString());
 
-                            JSONObject t3h = (JSONObject) item.get(4);
-                            t.setText(t3h.get("fcstValue").toString() + "℃");
-
-                            Log.d(TAG, "t3h : " + t3h.get("fcstValue").toString());
-
+                            for (int i = 0; i < item.length(); i++) {
+                                if (item.getJSONObject(i).getString("category").equals("T3H")); t.setText(item.getJSONObject(i).getString("fcstValue") + "℃");
+                            }
+//                            JSONObject t3h = (JSONObject) item.get(4);
+//                            t.setText(t3h.get("fcstValue").toString() + "℃");
+//
+//                            Log.d(TAG, "t3h : " + t3h.get("fcstValue").toString());
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -410,15 +435,15 @@ public class HomeFragment extends Fragment {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                    error.printStackTrace();
-                    Log.d(TAG, "FAIL");
+                        error.printStackTrace();
+                        Log.d(TAG, "FAIL");
                     }
                 });
 
         queue.add(jsonArrayRequest);
     }
 
-    private static class TIME_MAXIMUM{
+    public static class TIME_MAXIMUM{
         public static final int SEC = 60;
         public static final int MIN = 60;
         public static final int HOUR = 24;
@@ -461,6 +486,64 @@ public class HomeFragment extends Fragment {
     }
 
     public void setVoteResult() {
+        RequestQueue queue = Volley.newRequestQueue(this.getContext());
+        String url_fashion = "http://weather.eba-eqpgap7p.ap-northeast-2.elasticbeanstalk.com/fashion-result/";
+        String url_weather = "http://weather.eba-eqpgap7p.ap-northeast-2.elasticbeanstalk.com/weather-result/";
 
+        final TextView weather_result = getActivity().findViewById(R.id.weatherAgeGender);
+        final ArrayList<TextView> fashion_result = new ArrayList<>();
+        fashion_result.add((TextView) getActivity().findViewById(R.id.codi_recommend1));
+        fashion_result.add((TextView) getActivity().findViewById(R.id.codi_recommend2));
+        fashion_result.add((TextView) getActivity().findViewById(R.id.codi_recommend3));
+        fashion_result.add((TextView) getActivity().findViewById(R.id.codi_recommend4));
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
+                url_weather,
+                null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            JSONArray result = response.getJSONArray("weather");
+                            weather_result.setText(result.getJSONArray(0).getString(0) + " / " + result.getJSONArray(1).getString(0));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.d(TAG, "weather result fail");
+                    }
+                }
+        );
+
+        JsonObjectRequest jsonObjectRequest1 = new JsonObjectRequest(Request.Method.GET,
+                url_fashion,
+                null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            JSONArray result = response.getJSONArray("fashion");
+                            for (int i = 0; i < result.length(); i++) {
+                                fashion_result.get(i).setText(result.getJSONArray(i).getString(0));
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.d(TAG, "fashion result fail");
+                    }
+                }
+        );
+
+        queue.add(jsonObjectRequest);
+        queue.add(jsonObjectRequest1);
     }
 }
