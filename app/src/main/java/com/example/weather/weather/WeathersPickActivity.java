@@ -23,6 +23,7 @@ public class WeathersPickActivity extends AppCompatActivity {
 
         imgbtnBackWrite = findViewById(R.id.imgbtnBackWrite);
         imgbtnPick = findViewById(R.id.imgbtnPick);
+        imgbtnGo = findViewById(R.id.imgbtnGo);
 
         imgbtnBackWrite.setOnClickListener(new View.OnClickListener() {
             @Override
