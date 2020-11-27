@@ -19,8 +19,9 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/puple_circle" />
+            android:scaleType="fitXY"
+            android:layout_height="wrap_content"
+            android:src="@drawable/purple_circle_half" />
 
         <TextView
             android:id="@+id/textView20"
@@ -45,7 +46,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="80dp"
             android:orientation="vertical">
 
             <TextView
