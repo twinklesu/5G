@@ -22,6 +22,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.weather.fragment.HomeFragment;
 import com.example.weather.post.PostActivity;
 import com.example.weather.post.PostWriteActivity;
 import com.google.android.material.snackbar.Snackbar;
@@ -161,12 +162,14 @@ public class VoteActivity extends Activity {
                         error.printStackTrace();
                     }
                 });
-
         queue.add(jsonObjectRequest);
         queue.add(jsonObjectRequest1);
 
         //액티비티(팝업) 닫기
         finish();
+        Intent mainIntent = new Intent(this, MainActivity.class);
+        mainIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(mainIntent);
     }
 
     @Override

@@ -73,6 +73,7 @@ public class PostWriteActivity extends AppCompatActivity {
                                 Log.d(TAG, "Post Success : " + parameter);
 
                                 Intent intent = new Intent(PostWriteActivity.this, PostActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
                             }
                         },
