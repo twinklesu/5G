@@ -25,13 +25,11 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.weather.VoteActivity;
 import com.example.weather.codi.CodiActivity;
 import com.example.weather.post.PostActivity;
-import com.example.weather.post.PostWriteActivity;
 import com.example.weather.R;
 import com.example.weather.weather.WeathersPickActivity;
 
@@ -39,7 +37,6 @@ import com.example.weather.weather.WeathersPickActivity;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -117,7 +114,6 @@ public class HomeFragment extends Fragment {
             ActivityCompat.requestPermissions(getActivity(), PERMISSIONS, 100);
         }
         Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-//        Log.d(TAG, location.toString());
         double longitude = location.getLongitude();
         double latitude = location.getLatitude();
 
@@ -154,33 +150,6 @@ public class HomeFragment extends Fragment {
 
         String url = urlBuilder.toString();
         Log.d(TAG, "URL : " + url);
-
-//        JsonObjectRequest jsonArrayRequest = new JsonObjectRequest(Request.Method.GET,
-//                url, null,
-//                new Response.Listener<JSONObject>() {
-//                    @Override
-//                    public void onResponse(JSONObject response) {
-//                        Log.d(TAG, "Success : " + response.toString());
-//                        try {
-//                            JSONObject result = (JSONObject) response.get("result");
-//                            JSONObject body = (JSONObject) result.get("body");
-//                            JSONObject items = (JSONObject) body.get("items");
-//                            JSONArray item = (JSONArray) items.get("item");
-//
-//
-//                        } catch (JSONException e) {
-//                            e.printStackTrace();
-//                        }
-//                    }
-//                }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                error.printStackTrace();
-//                Log.d(TAG, "FAIL");
-//            }
-//        }
-//        );
-//        queue.add(jsonArrayRequest);
 
         setBoardPost();
         setWeather(url);
@@ -410,8 +379,6 @@ public class HomeFragment extends Fragment {
                         Log.d(TAG, "Success : " + response.toString());
                         try {
                             TextView t = (TextView) getActivity().findViewById(R.id.weatherMeteorological);
-                            TextView t_max = (TextView) getActivity().findViewById(R.id.temp_highest);
-                            TextView t_min = (TextView) getActivity().findViewById(R.id.temp_min);
 
                             JSONObject result = (JSONObject) response.get("response");
                             JSONObject body = (JSONObject) result.get("body");
@@ -425,10 +392,6 @@ public class HomeFragment extends Fragment {
                                 Log.d(TAG, String.valueOf(item.getJSONObject(i).getString("category").equals("T3H")));
                                 Log.d(TAG, String.valueOf(item.getJSONObject(i).getString("category")));
                             }
-//                            JSONObject t3h = (JSONObject) item.get(4);
-//                            t.setText(t3h.get("fcstValue").toString() + "℃");
-//
-//                            Log.d(TAG, "t3h : " + t3h.get("fcstValue").toString());
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
