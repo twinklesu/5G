@@ -84,7 +84,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="630dp">
+                android:layout_height="870dp">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -93,9 +93,25 @@
                     android:orientation="vertical">
 
                     <ImageButton
+                        android:id="@+id/imageButton27"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00FFFFFF"
+                        app:srcCompat="@drawable/codi_img20" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton25"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="#00FFFFFF"
+                        app:srcCompat="@drawable/codi_img18" />
+
+                    <ImageButton
                         android:id="@+id/imageButton23"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         android:background="#00FFFFFF"
                         app:srcCompat="@drawable/codi_img9" />
 
@@ -139,9 +155,25 @@
                     android:orientation="vertical">
 
                     <ImageButton
+                        android:id="@+id/imageButton26"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00FFFFFF"
+                        app:srcCompat="@drawable/codi_img19" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton24"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="#00FFFFFF"
+                        app:srcCompat="@drawable/codi_img17" />
+
+                    <ImageButton
                         android:id="@+id/imageButton22"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         android:background="#00FFFFFF"
                         app:srcCompat="@drawable/codi_img8" />
 
@@ -185,9 +217,17 @@
                     android:orientation="vertical">
 
                     <ImageButton
+                        android:id="@+id/imageButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00FFFFFF"
+                        app:srcCompat="@drawable/codi_img16" />
+
+                    <ImageButton
                         android:id="@+id/imageButton21"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         android:background="#00FFFFFF"
                         app:srcCompat="@drawable/codi_img7" />
 
