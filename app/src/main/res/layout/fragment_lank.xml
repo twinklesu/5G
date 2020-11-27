@@ -30,7 +30,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="5dp"
-            android:textSize="30dp"
+            android:textSize="25dp"
             android:textStyle="bold"
             android:text="랭킹" />
 
@@ -89,7 +89,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="TextView"
+                    android:text="5G조 최고^^!"
                     android:textColor="#000000"
                     android:textSize="20dp"
                     android:layout_marginStart="5dp"
