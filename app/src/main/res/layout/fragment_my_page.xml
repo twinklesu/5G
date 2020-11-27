@@ -130,24 +130,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/codi_img7" />
+            android:src="@drawable/codi_img11" />
         <ImageView
             android:id="@+id/codi2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/codi_img7" />
+            android:src="@drawable/codi_img2" />
         <ImageView
             android:id="@+id/codi3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/codi_img7" />
+            android:src="@drawable/codi_img3" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -155,24 +155,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/codi_img7" />
+            android:src="@drawable/codi_img4" />
         <ImageView
             android:id="@+id/codi5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/codi_img7" />
+            android:src="@drawable/codi_img5" />
         <ImageView
             android:id="@+id/codi6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/codi_img7" />
+            android:src="@drawable/codi_img6" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -186,13 +186,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/codi_img7" />
+            android:src="@drawable/codi_img10" />
         <ImageView
             android:id="@+id/codi9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/codi_img7" />
+            android:src="@drawable/codi_img9" />
     </LinearLayout>
         </LinearLayout>
     </ScrollView>
