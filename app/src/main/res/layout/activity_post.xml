@@ -84,9 +84,10 @@
         android:backgroundTint="#00FFFFFF"
         android:clickable="true"
         app:backgroundTint="#00FFFFFF"
-        app:fabCustomSize="60dp"
-        app:fabSize="normal"
-        app:maxImageSize="60dp"
+        app:elevation="20dp"
+        app:fabCustomSize="49dp"
+        app:fabSize="auto"
+        app:maxImageSize="58dp"
         app:srcCompat="@drawable/plus" />
 
 

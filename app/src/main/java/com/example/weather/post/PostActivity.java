@@ -110,6 +110,7 @@ public class PostActivity extends AppCompatActivity {
         });
 
         fabtnPlus = findViewById(R.id.fabtnPlus);
+        fabtnPlus.setSize(FloatingActionButton.SIZE_AUTO);
         fabtnPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
