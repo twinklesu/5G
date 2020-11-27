@@ -48,7 +48,8 @@
         </activity>
         <activity
             android:name=".JoinActivity2"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.NoActionBar" >
+        </activity>
         <activity
             android:name=".JoinActivity1"
             android:theme="@style/Theme.AppCompat.NoActionBar" />

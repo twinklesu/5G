@@ -31,7 +31,7 @@ public class JoinActivity2 extends AppCompatActivity {
     String TAG = JoinActivity2.class.getSimpleName();
 
     EditText edtNickName, edtName, edtTel, edtCertification;
-    RadioButton radiobtnWoman, radiobtnMan;
+    CheckBox radiobtnWoman, radiobtnMan;
     Button btnCertification, btnSignUp;
     int user_sex;
 

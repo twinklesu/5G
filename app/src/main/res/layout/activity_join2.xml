@@ -88,34 +88,32 @@
             android:layout_marginTop="5dp"
             android:orientation="horizontal">
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/radiobtnWoman"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:background="@android:color/darker_gray"
-                android:backgroundTint="#85938F8F"
-                android:button="@drawable/radiobutton"
-                android:gravity="center"
+                android:button="@android:color/transparent"
+                android:background="@drawable/radiobutton"
+                android:gravity="center|center_horizontal|center_vertical"
                 android:text="여성"
                 android:textColor="#070707"
                 android:textSize="18sp" />
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/radiobtnMan"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_weight="1"
-                android:background="@android:color/darker_gray"
-                android:backgroundTint="#85938F8F"
-                android:button="@drawable/radiobutton"
-                android:gravity="center"
+                android:button="@android:color/transparent"
+                android:background="@drawable/radiobutton"
+                android:gravity="center|center_horizontal|center_vertical"
                 android:text="남성"
-                android:textColor="#0C0C0C"
+                android:textColor="#070707"
                 android:textSize="18sp" />
 
         </LinearLayout>
@@ -160,11 +158,12 @@
 
             <EditText
                 android:id="@+id/edtCertification"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
+                android:layout_weight="3"
                 android:background="@drawable/rounded_edittext"
                 android:ems="10"
                 android:inputType="textPostalAddress"
@@ -176,7 +175,7 @@
 
             <Button
                 android:id="@+id/btnCertification"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
