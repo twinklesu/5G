@@ -71,10 +71,10 @@ public class PostActivity extends AppCompatActivity {
 
                             for(int i = 0; i < results.length(); i++) {
                                 JSONObject result = results.getJSONObject(i);
-                                PostItem item = new PostItem(result.getString("post_id"), result.getString("post_title"), result.getString("post_content"));
+                                PostItem item = new PostItem(result.getString("post_id"), result.getString("post_title"), result.getString("post_content"), result.getString("reg_dt"));
                                 postItems.add(item);
                             }
-                            post_count = response.length();
+                            post_count = response.length() + 1;
 
                             adapter.notifyDataSetChanged();
                         } catch (JSONException e) {
@@ -104,6 +104,7 @@ public class PostActivity extends AppCompatActivity {
                 intent.putExtra("Content", postItems.get(position).getContent());
                 intent.putExtra("PostNo", String.valueOf(post_count - position));
                 intent.putExtra("PostCount", post_count);
+                intent.putExtra("PostTime", postItems.get(position).getTime());
                 startActivity(intent);
             }
         });

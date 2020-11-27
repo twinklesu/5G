@@ -23,19 +23,23 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.weather.R;
+import com.example.weather.fragment.HomeFragment;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 public class PostDetailActivity extends AppCompatActivity {
 
     String TAG = PostDetailActivity.class.getSimpleName();
 
-    TextView Id, Title, Content;
+    TextView Id, Title, Content, Time;
     ImageButton imgbtnPostDetailBack;
     int post_count;
 
@@ -48,10 +52,12 @@ public class PostDetailActivity extends AppCompatActivity {
         String id = intent.getStringExtra("ID");
         String title = intent.getStringExtra("Title");
         String content = intent.getStringExtra("Content");
+        String time = intent.getStringExtra("PostTime");
         final String post_no = intent.getStringExtra("PostNo");
         Id = findViewById(R.id.txtNickName);
         Title = findViewById(R.id.txtPostDetailTitle);
         Content = findViewById(R.id.txtContent);
+        Time = findViewById(R.id.txtTime);
 
         final EditText comment = findViewById(R.id.edtComment);
         ImageButton comment_btn = findViewById(R.id.btnComment);
@@ -59,6 +65,7 @@ public class PostDetailActivity extends AppCompatActivity {
         Id.setText(id);
         Title.setText(title);
         Content.setText(content);
+        Time.setText(formatTimeString(timeToMill(time)));
 
         final String url = "http://weather.eba-eqpgap7p.ap-northeast-2.elasticbeanstalk.com/post-comment/";
 
@@ -146,7 +153,7 @@ public class PostDetailActivity extends AppCompatActivity {
                         for (int i = 0; i < response.length(); i++) {
                             try {
                                 JSONObject result = response.getJSONObject(i);
-                                CommentItem commentItem = new CommentItem(result.getString("comment"), result.getString("user_id"));
+                                CommentItem commentItem = new CommentItem(result.getString("comment"), result.getString("user_id"), result.getString("reg_dt"));
                                 commentItems.add(commentItem);
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -163,5 +170,40 @@ public class PostDetailActivity extends AppCompatActivity {
                 }
         );
         queue.add(jsonArrayRequest);
+    }
+
+
+    public static String formatTimeString(long regTime) {
+        long curTime = System.currentTimeMillis();
+        long diffTime = (curTime - regTime) / 1000;
+        String msg = null;
+        if (diffTime < HomeFragment.TIME_MAXIMUM.SEC) {
+            msg = "방금 전";
+        } else if ((diffTime /= HomeFragment.TIME_MAXIMUM.SEC) < HomeFragment.TIME_MAXIMUM.MIN) {
+            msg = diffTime + "분 전";
+        } else if ((diffTime /= HomeFragment.TIME_MAXIMUM.MIN) < HomeFragment.TIME_MAXIMUM.HOUR) {
+            msg = (diffTime) + "시간 전";
+        } else if ((diffTime /= HomeFragment.TIME_MAXIMUM.HOUR) < HomeFragment.TIME_MAXIMUM.DAY) {
+            msg = (diffTime) + "일 전";
+        } else if ((diffTime /= HomeFragment.TIME_MAXIMUM.DAY) < HomeFragment.TIME_MAXIMUM.MONTH) {
+            msg = (diffTime) + "달 전";
+        } else {
+            msg = (diffTime) + "년 전";
+        }
+
+        return msg;
+    }
+
+    public long timeToMill(String time) {
+        String parseString = time.replace("T", " ").replace("+09:00", "");
+        SimpleDateFormat fm = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = null;
+        try {
+            date = fm.parse(parseString);
+        } catch (ParseException e) {
+            Log.d(TAG, "", e);
+        }
+
+        return date.getTime();
     }
 }

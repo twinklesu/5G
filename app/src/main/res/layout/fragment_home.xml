@@ -26,6 +26,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+                <ImageView
+                    android:id="@+id/homeFragmentBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/home_fragment_background" />
+
                 <ImageButton
                     android:id="@+id/vote"
                     android:layout_width="330dp"
@@ -185,6 +192,7 @@
                             android:background="@drawable/codibox"
                             android:gravity="center|center_horizontal|center_vertical"
                             android:text="코디추천4"
+                            android:gravity="center|center_horizontal|center_vertical"
                             android:textAlignment="center"
                             android:textColor="#000000" />
 
@@ -196,6 +204,7 @@
                             android:background="@drawable/codibox"
                             android:gravity="center|center_horizontal|center_vertical"
                             android:text="코디추천4"
+                            android:gravity="center|center_horizontal|center_vertical"
                             android:textAlignment="center"
                             android:textColor="#000000" />
                     </LinearLayout>
@@ -216,6 +225,7 @@
                             android:gravity="center|center_horizontal|center_vertical"
                             android:text="코디추천4"
                             android:textAlignment="center"
+                            android:gravity="center|center_horizontal|center_vertical"
                             android:textColor="#000000" />
 
                         <TextView
@@ -622,6 +632,78 @@
                 android:scaleType="fitXY" />
         </LinearLayout>
 
+        <ImageView
+            android:id="@+id/divideBar3"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/divide_bar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/weathers_pick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:text="웨더's 픽"
+                    android:textColor="#000000"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/moreButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:text="더보기 >   "
+                    android:textAlignment="textEnd"
+                    android:textColor="#FF3D62" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btn_wethers_pick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/weatherspick_button"
+            android:scaleType="fitXY" />
+
+        <ImageView
+            android:id="@+id/divideBar4"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/divide_bar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="30dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="47dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:background="@drawable/w"
+                android:scaleType="fitXY" />
+        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>
